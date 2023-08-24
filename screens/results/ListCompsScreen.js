@@ -36,7 +36,7 @@ const ListCompsScreen = ({ navigation, route }) => {
       headerTitle: nazov,
       headerShown: true,
       headerStyle: {
-        backgroundColor: "#fff7ed",
+        backgroundColor: "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -50,7 +50,7 @@ const ListCompsScreen = ({ navigation, route }) => {
   }, []);
 
   return (
-    <View className="flex-1 bg-orange-50">
+    <View className="flex-1 bg-white">
       {vysledky.length === 0 && (
         <Text className="text-center mt-10 font-semibold text-[16px]">
           Nothing to show!
@@ -63,7 +63,7 @@ const ListCompsScreen = ({ navigation, route }) => {
               navigation.navigate("AddResult", { id_sutaz });
             }}
             icon={{ name: "add", color: "#fff7ed" }}
-            color="#fb923c"
+            color="#3b82f6"
           />
         </View>
       )}
@@ -128,7 +128,7 @@ const ListCompsScreen = ({ navigation, route }) => {
                     <Icon
                       name="create-outline"
                       size={27}
-                      color={"#fb923c"}
+                      color={"#3b82f6"}
                       onPress={() =>
                         navigation.navigate("EditResult", {
                           id_timeline: item.id_timeline,
@@ -151,8 +151,8 @@ const ListCompsScreen = ({ navigation, route }) => {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            colors={["orange"]}
-            tintColor={"orange"}
+            colors={["blue"]}
+            tintColor={"blue"}
           />
         }
       />

@@ -40,7 +40,7 @@ const UserTeamComps = ({ route, navigation }) => {
       headerTitle: "Results",
       headerShown: true,
       headerStyle: {
-        backgroundColor: "#fff7ed",
+        backgroundColor: "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -54,7 +54,7 @@ const UserTeamComps = ({ route, navigation }) => {
   }, []);
 
   return (
-    <View className="flex-1 bg-orange-50">
+    <View className="flex-1 bg-white">
       <FlatList
         className="mt-4"
         data={sutaze}
@@ -71,7 +71,7 @@ const UserTeamComps = ({ route, navigation }) => {
               key={item.id_sutaz}
               activeOpacity={0.5}
             >
-              <View className="bg-orange-300 mb-5 py-5 px-4 w-4/5 items-center rounded-lg">
+              <View className="bg-blue-400 mb-5 py-5 px-4 w-4/5 items-center rounded-lg">
                 <Text className="text-lg">{item.nazov}</Text>
               </View>
             </TouchableOpacity>
@@ -81,8 +81,8 @@ const UserTeamComps = ({ route, navigation }) => {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            colors={["orange"]}
-            tintColor={"orange"}
+            colors={["blue"]}
+            tintColor={"blue"}
           />
         }
       />

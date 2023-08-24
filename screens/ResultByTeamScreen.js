@@ -49,7 +49,7 @@ const ResultByTeamScreen = ({ route, navigation }) => {
   }, []);
 
   return (
-    <View className="flex-1 bg-orange-50">
+    <View className="flex-1 bg-white">
       {vysledky.length === 0 && (
         <Text className="text-center mt-10 font-semibold text-[16px]">
           Nothing to show!

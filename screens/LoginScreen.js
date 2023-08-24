@@ -13,6 +13,8 @@ import Spinner from "react-native-loading-spinner-overlay/lib";
 import * as Crypto from "expo-crypto";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
+import { TextInput } from "react-native-paper";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Login = ({ navigation }) => {
   const validate = async () => {
@@ -46,6 +48,7 @@ const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const [hidePassword, setHidePassword] = useState(true);
   const { isLoading, login, userInfo, continueWithoutAccount } = useAuth();
 
   const handleError = (errorMsg, inputName) => {
@@ -53,11 +56,11 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View className="items-center bg-gray-200 flex-1">
+    <View className="items-center flex-1">
       <StatusBar backgroundColor={"transparent"} translucent style="dark" />
       <View className="w-full h-96 absolute top-0 left-0">
         <LinearGradient
-          colors={["#FEB04C", "#FD693B"]}
+          colors={["#01BFFD", "#2641C2"]}
           style={{ width: "100%", height: "100%" }}
           start={{ x: 0, y: 0 }}
         />
@@ -68,7 +71,7 @@ const Login = ({ navigation }) => {
         style={{ height: 170, width: 170, marginBottom: 18, marginTop: 50 }}
       />
 
-      <KeyboardAvoidingView className="w-full items-center bg-orange-50 h-full pt-10 rounded-t-[38px]">
+      <KeyboardAvoidingView className="w-full items-center bg-white h-full pt-10 rounded-t-[38px]">
         <Text className="text-4xl text-center">Login</Text>
         <Spinner visible={isLoading} />
 
@@ -82,6 +85,7 @@ const Login = ({ navigation }) => {
               handleError(null, "email");
             }}
           />
+
           <Input
             placeholder="Password"
             error={errors.password}
@@ -108,8 +112,8 @@ const Login = ({ navigation }) => {
 
         <View className="w-4/5 items-center justify-center gap-5 mt-6">
           <TouchableOpacity
-            activeOpacity={0.5}
-            className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+            activeOpacity={0.6}
+            className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
             onPress={validate}
           >
             <Text className="text-center text-white font-bold">Login</Text>
@@ -123,7 +127,7 @@ const Login = ({ navigation }) => {
                 navigation.navigate("Register");
               }}
             >
-              <Text className="text-orange-400 font-bold">Register</Text>
+              <Text className="text-blue-500 font-bold">Register</Text>
             </TouchableOpacity>
           </View>
         </View>

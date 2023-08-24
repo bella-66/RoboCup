@@ -44,13 +44,13 @@ const Timeline = ({ route, navigation }) => {
     <SafeAreaView className="flex-1">
       <View className="w-full h-48 absolute top-0 left-0">
         <LinearGradient
-          colors={["#f97316", "orange"]}
+          colors={["#385bff", "#01BFFD"]}
           style={{ width: "100%", height: "100%" }}
           start={{ x: 0.85, y: 0 }}
         />
       </View>
 
-      <View className="space-y-12 bg-orange-50 h-full w-full p-5 rounded-t-3xl z-50 mt-24">
+      <View className="space-y-12 bg-white h-full w-full p-5 rounded-t-3xl z-50 mt-24">
         <Text className="text-2xl mt-3 font-semibold uppercase text-center">
           {timeline.nazov}
         </Text>
@@ -62,12 +62,12 @@ const Timeline = ({ route, navigation }) => {
 
           <View className="space-y-3">
             <View className="flex-row items-center">
-              <View className="bg-orange-100 rounded-xl mr-3">
+              <View className="bg-blue-100 rounded-xl mr-3">
                 <Icon
                   name="calendar"
                   size={21}
                   style={{ padding: 6 }}
-                  color="#fb923c"
+                  color="#3b82f6"
                 />
               </View>
               <Text className="text-lg text-gray-600">
@@ -76,12 +76,12 @@ const Timeline = ({ route, navigation }) => {
             </View>
 
             <View className="flex-row items-center">
-              <View className="bg-orange-100 rounded-xl mr-3">
+              <View className="bg-blue-100 rounded-xl mr-3">
                 <Icon
                   name="time"
                   size={21}
                   style={{ padding: 6 }}
-                  color="#fb923c"
+                  color="#3b82f6"
                 />
               </View>
               <Text className="text-lg text-gray-600">
@@ -93,12 +93,12 @@ const Timeline = ({ route, navigation }) => {
               timeline.druh_operacie !== "Meeting" && (
                 <View>
                   <View className="flex-row items-center">
-                    <View className="bg-orange-100 rounded-xl mr-3">
+                    <View className="bg-blue-100 rounded-xl mr-3">
                       <Icon
                         name="people"
                         size={21}
                         style={{ padding: 6 }}
-                        color="#fb923c"
+                        color="#3b82f6"
                       />
                     </View>
                     {timeline.tim2 ? (

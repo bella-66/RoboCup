@@ -13,11 +13,11 @@ const Input = ({
   const [hidePassword, setHidePassword] = useState(password);
 
   return (
-    <View className="mt-4">
+    <View className="mt-4 ">
       <View
-        className="flex-row bg-slate-200 py-2 px-5 border items-center"
+        className="flex-row bg-slate-100 py-2.5 px-5 border items-center rounded-md"
         style={{
-          borderColor: error ? "red" : isFocused ? "#475569" : "transparent",
+          borderColor: error ? "red" : isFocused ? "#2563eb" : "#949494",
         }}
       >
         <TextInput
@@ -25,6 +25,7 @@ const Input = ({
           secureTextEntry={hidePassword}
           className="flex-1"
           placeholder={placeholder}
+          placeholderTextColor={"#9ca3af"}
           {...props}
           onFocus={() => {
             onFocus();
@@ -37,8 +38,9 @@ const Input = ({
         {password && (
           <Icon
             onPress={() => setHidePassword(!hidePassword)}
-            name={hidePassword ? "eye-outline" : "eye-off-outline"}
+            name={hidePassword ? "eye" : "eye-off"}
             size={20}
+            color="#9ca3af"
           />
         )}
       </View>

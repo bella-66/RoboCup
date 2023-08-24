@@ -45,7 +45,7 @@ const ResetPasswordScreen = () => {
   };
 
   return (
-    <View className="flex-1 items-center justify-center bg-gray-200">
+    <View className="flex-1 items-center justify-center bg-white">
       <Text className="text-xl text-center p-5">
         Enter the 4-digit code sent to your email
       </Text>
@@ -73,7 +73,7 @@ const ResetPasswordScreen = () => {
       />
       <View className="w-4/5 mt-10">
         <Pressable
-          className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600 mt-8"
+          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700 mt-8"
           activeOpacity={0.5}
           onPress={validate}
         >

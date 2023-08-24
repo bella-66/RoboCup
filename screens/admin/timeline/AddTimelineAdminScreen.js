@@ -195,7 +195,7 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
   //TODO update timeline => tim_sutaz
 
   return (
-    <SafeAreaView className="bg-orange-50 flex-1">
+    <SafeAreaView className="bg-white flex-1">
       <ScrollView
         contentContainerStyle={{
           flex: 1,
@@ -248,15 +248,13 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                 onSelectItem={(item) => handleChange(item.value, "id_sutaz")}
                 listMode="SCROLLVIEW"
                 placeholder="Competition"
-                placeholderStyle={{ color: "gray" }}
+                placeholderStyle={{ color: "#9ca3af" }}
                 zIndex={120}
                 onOpen={() => handleError(null, "id_sutaz")}
                 error={errors.id_sutaz}
-                className="bg-slate-200 py-2 px-5"
+                className="bg-slate-100 py-2.5 px-5 rounded-md"
                 style={{
-                  borderColor: errors.id_sutaz && "red",
-                  borderWidth: errors.id_sutaz && 1,
-                  borderRadius: 0,
+                  borderColor: errors.id_sutaz ? "red" : "#949494",
                 }}
                 containerStyle={{ marginTop: 16 }}
               />
@@ -279,15 +277,13 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                 }
                 listMode="SCROLLVIEW"
                 placeholder="Type"
-                placeholderStyle={{ color: "gray" }}
+                placeholderStyle={{ color: "#9ca3af" }}
                 zIndex={100}
                 onOpen={() => handleError(null, "druh_operacie")}
                 error={errors.druh_operacie}
-                className="bg-slate-200 py-2 px-5"
+                className="bg-slate-100 py-2.5 px-5 rounded-md"
                 style={{
-                  borderColor: errors.druh_operacie && "red",
-                  borderWidth: errors.druh_operacie && 1,
-                  borderRadius: 0,
+                  borderColor: errors.druh_operacie ? "red" : "#949494",
                 }}
                 containerStyle={{ marginTop: 16 }}
               />
@@ -310,15 +306,13 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                   handleChange(item.value, "id_tim_1");
                 }}
                 placeholder="Team 1"
-                placeholderStyle={{ color: "gray" }}
+                placeholderStyle={{ color: "#9ca3af" }}
                 zIndex={90}
                 onOpen={() => handleError(null, "id_tim_1")}
                 error={errors.id_tim_1}
-                className="bg-slate-200 py-2 px-5"
+                className="bg-slate-100 py-2.5 px-5 rounded-md"
                 style={{
-                  borderColor: errors.id_tim_1 && "red",
-                  borderWidth: errors.id_tim_1 && 1,
-                  borderRadius: 0,
+                  borderColor: errors.id_tim_1 ? "red" : "#949494",
                 }}
                 containerStyle={{ marginTop: 16 }}
               />
@@ -342,15 +336,13 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                     }
                     listMode="SCROLLVIEW"
                     placeholder="Team 2"
-                    placeholderStyle={{ color: "gray" }}
+                    placeholderStyle={{ color: "#9ca3af" }}
                     zIndex={80}
-                    className="bg-slate-200 py-2 px-5"
+                    className="bg-slate-100 py-2.5 px-5 rounded-md"
                     onOpen={() => handleError(null, "id_tim_2")}
                     error={errors.id_tim_2}
                     style={{
-                      borderColor: errors.id_tim_2 && "red",
-                      borderWidth: errors.id_tim_2 && 1,
-                      borderRadius: 0,
+                      borderColor: errors.id_tim_2 ? "red" : "#949494",
                     }}
                     containerStyle={{ marginTop: 16 }}
                   />
@@ -366,7 +358,7 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
             <View className="w-4/5 mt-8 mb-5 space-y-5">
               <TouchableOpacity
                 onPress={validate}
-                className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+                className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
                 activeOpacity={0.5}
               >
                 <Text className="text-center text-white font-bold">Submit</Text>

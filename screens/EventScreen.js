@@ -55,7 +55,7 @@ const EventScreen = ({ navigation }) => {
       headerShown: true,
       headerTitleAlign: "center",
       headerStyle: {
-        backgroundColor: "#fff7ed",
+        backgroundColor: "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -70,16 +70,16 @@ const EventScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <View className="flex-1 bg-orange-50">
+    <View className="flex-1 bg-white">
       <StatusBar backgroundColor={"transparent"} translucent style="dark" />
       <Tab
         value={index}
         onChange={setIndex}
         indicatorStyle={{
-          backgroundColor: "#fdba74",
+          backgroundColor: "#60a5fa",
           height: 3,
         }}
-        titleStyle={{ color: "#fdba74" }}
+        titleStyle={{ color: "#60a5fa" }}
       >
         <Tab.Item>Upcoming</Tab.Item>
         <Tab.Item>Past</Tab.Item>
@@ -113,8 +113,8 @@ const EventScreen = ({ navigation }) => {
                 <RefreshControl
                   refreshing={refreshingUpcoming}
                   onRefresh={onRefreshUpcoming}
-                  colors={["orange"]}
-                  tintColor={"orange"}
+                  colors={["blue"]}
+                  tintColor={"blue"}
                 />
               }
             />
@@ -148,8 +148,8 @@ const EventScreen = ({ navigation }) => {
                 <RefreshControl
                   refreshing={refreshingPast}
                   onRefresh={onRefreshPast}
-                  colors={["orange"]}
-                  tintColor={"orange"}
+                  colors={["blue"]}
+                  tintColor={"blue"}
                 />
               }
             />

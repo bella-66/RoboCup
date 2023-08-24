@@ -248,7 +248,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
   }, []);
 
   return (
-    <SafeAreaView className="flex-1 bg-orange-50 justify-center">
+    <SafeAreaView className="flex-1 bg-white justify-center">
       <View>
         <ScrollView>
           <KeyboardAvoidingView behavior={Platform.OS === "ios" && "padding"}>
@@ -328,18 +328,16 @@ const AddOsobaScreen = ({ navigation, route }) => {
                   setItems={setItems}
                   listMode="SCROLLVIEW"
                   placeholder="Role"
-                  className="bg-slate-200 py-2 px-5"
+                  className="bg-slate-100 py-2.5 px-5 rounded-md"
                   containerStyle={{ marginTop: 16 }}
-                  placeholderStyle={{ color: "gray" }}
+                  placeholderStyle={{ color: "#9ca3af" }}
                   zIndex={150}
                   error={errors.rola}
                   onOpen={() => {
                     handleError(null, "rola");
                   }}
                   style={{
-                    borderColor: errors.rola && "red",
-                    borderWidth: errors.rola && 1,
-                    borderRadius: 0,
+                    borderColor: errors.rola ? "red" : "#949494",
                   }}
                 />
                 {errors.rola && (
@@ -366,13 +364,13 @@ const AddOsobaScreen = ({ navigation, route }) => {
                     handleError(null, "telefon");
                   }}
                   style={{
-                    backgroundColor: "#e2e8f0",
+                    backgroundColor: "#f1f5f9",
                     marginTop: 16,
                     paddingHorizontal: 8,
                     paddingVertical: 16,
-                    borderColor: errors.telefon && "red",
-                    borderWidth: errors.telefon && 1,
-                    borderRadius: 0,
+                    borderColor: errors.telefon ? "red" : "#949494",
+                    borderWidth: 1,
+                    borderRadius: 6,
                   }}
                   textProps={{
                     placeholder: "Phone number",
@@ -404,11 +402,11 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       containerStyle={{ flex: 1, flexDirection: "row" }}
                       styleInput={{
                         width: "30%",
-                        backgroundColor: "#e2e8f0",
+                        backgroundColor: "#f1f5f9",
                         height: 45,
-                        borderColor: errors.datum_narodenia && "red",
-                        borderWidth: errors.datum_narodenia && 1,
-                        borderRadius: 0,
+                        borderColor: errors.datum_narodenia ? "red" : "#949494",
+                        borderWidth: 1,
+                        borderRadius: 6,
                       }}
                     />
                     {errors.datum_narodenia && (
@@ -425,7 +423,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       maxHeight={170}
                       multiple={true}
                       mode="BADGE"
-                      badgeDotColors={["#e76f51"]}
+                      badgeDotColors={["#3b82f6"]}
                       open={timOpen}
                       value={timValue}
                       items={timItems}
@@ -437,14 +435,12 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       setItems={setTimItems}
                       listMode="SCROLLVIEW"
                       placeholder="Teams"
-                      className="bg-slate-200 py-2 px-5"
+                      className="bg-slate-100 py-2.5 px-5 rounded-md"
                       containerStyle={{ marginTop: 16 }}
-                      placeholderStyle={{ color: "gray" }}
+                      placeholderStyle={{ color: "#9ca3af" }}
                       zIndex={100}
                       style={{
-                        borderColor: errors.tim && "red",
-                        borderWidth: errors.tim && 1,
-                        borderRadius: 0,
+                        borderColor: errors.tim ? "red" : "#949494",
                       }}
                       error={errors.tim}
                       onOpen={() => {
@@ -469,18 +465,16 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       setItems={setOrganizaciaItems}
                       listMode="SCROLLVIEW"
                       placeholder="Organization"
-                      className="bg-slate-200 py-2 px-5"
+                      className="bg-slate-100 py-2.5 px-5 rounded-md"
                       containerStyle={{ marginTop: 16 }}
-                      placeholderStyle={{ color: "gray" }}
+                      placeholderStyle={{ color: "#9ca3af" }}
                       zIndex={90}
                       error={errors.organizacia}
                       onOpen={() => {
                         handleError(null, "organizacia");
                       }}
                       style={{
-                        borderColor: errors.organizacia && "red",
-                        borderWidth: errors.organizacia && 1,
-                        borderRadius: 0,
+                        borderColor: errors.organizacia ? "red" : "#949494",
                       }}
                     />
                     {errors.organizacia && (

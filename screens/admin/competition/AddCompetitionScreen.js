@@ -114,7 +114,7 @@ const AddCompetitionScreen = ({ navigation, route }) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" && "padding"}
-      className="items-center justify-center flex-1 bg-orange-50"
+      className="items-center justify-center flex-1 bg-white"
     >
       <Text className="text-4xl text-center">
         {route.params?.edit ? "Edit Competition" : "Add Competition"}
@@ -151,18 +151,16 @@ const AddCompetitionScreen = ({ navigation, route }) => {
           setItems={setItems}
           listMode="SCROLLVIEW"
           placeholder="Main referee"
-          className="bg-slate-200 py-2 px-5"
+          className="bg-slate-100 py-2.5 px-5 rounded-md"
           containerStyle={{ marginTop: 16 }}
-          placeholderStyle={{ color: "gray" }}
+          placeholderStyle={{ color: "#9ca3af" }}
           zIndex={100}
           error={errors.id_hlavny_rozhodca}
           onOpen={() => {
             handleError(null, "id_hlavny_rozhodca");
           }}
           style={{
-            borderColor: errors.id_hlavny_rozhodca && "red",
-            borderWidth: errors.id_hlavny_rozhodca && 1,
-            borderRadius: 0,
+            borderColor: errors.id_hlavny_rozhodca ? "red" : "#949494",
           }}
         />
         {errors.id_hlavny_rozhodca && (
@@ -184,7 +182,7 @@ const AddCompetitionScreen = ({ navigation, route }) => {
       <View className="w-4/5 mt-8 mb-5">
         <TouchableOpacity
           onPress={validate}
-          className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
           activeOpacity={0.5}
         >
           <Text className="text-center text-white font-bold">Submit</Text>

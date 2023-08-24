@@ -41,7 +41,7 @@ const VysledkyScreen = ({ navigation }) => {
       headerShown: true,
       headerTitleAlign: "center",
       headerStyle: {
-        backgroundColor: "#fff7ed",
+        backgroundColor: "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -55,7 +55,7 @@ const VysledkyScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <View className="flex-1 bg-orange-50">
+    <View className="flex-1 bg-[#EFF2F5]">
       {sutaze.length === 0 && (
         <Text className="text-center mt-10 font-semibold text-[16px]">
           Nothing to show!
@@ -68,7 +68,7 @@ const VysledkyScreen = ({ navigation }) => {
               navigation.navigate("AddResult");
             }}
             icon={{ name: "add", color: "#fff7ed" }}
-            color="#fb923c"
+            color="#3b82f6"
           />
         </View>
       )}
@@ -88,7 +88,7 @@ const VysledkyScreen = ({ navigation }) => {
               }
               key={item.id_sutaz}
             >
-              <View className="bg-orange-300 mb-5 py-5 px-4 w-4/5 items-center rounded-lg">
+              <View className="bg-blue-400 mb-5 py-5 px-4 w-4/5 items-center rounded-lg">
                 <Text className="text-lg">{item.nazov}</Text>
               </View>
             </TouchableOpacity>
@@ -98,8 +98,8 @@ const VysledkyScreen = ({ navigation }) => {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            colors={["orange"]}
-            tintColor={"orange"}
+            colors={["blue"]}
+            tintColor={"blue"}
           />
         }
       />

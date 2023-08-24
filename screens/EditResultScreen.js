@@ -76,7 +76,7 @@ const EditResultScreen = ({ route, navigation }) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" && "padding"}
-      className="items-center justify-center flex-1 bg-orange-50"
+      className="items-center justify-center flex-1 bg-white"
     >
       <Text className="text-4xl text-center">Edit Result</Text>
       <View className="w-4/5 mt-10">
@@ -114,7 +114,7 @@ const EditResultScreen = ({ route, navigation }) => {
       <View className="w-4/5 mt-12 mb-5">
         <Pressable
           onPress={validate}
-          className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
         >
           <Text className="text-center text-white font-bold">Submit</Text>
         </Pressable>

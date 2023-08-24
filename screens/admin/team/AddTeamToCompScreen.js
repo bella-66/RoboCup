@@ -71,7 +71,7 @@ const AddTeamToCompScreen = ({ route }) => {
   }, []);
 
   return (
-    <KeyboardAvoidingView className="items-center justify-center flex-1 bg-orange-50">
+    <KeyboardAvoidingView className="items-center justify-center flex-1 bg-white">
       <Text className="text-2xl text-center">Add Team To Competition</Text>
 
       <View className="w-4/5 mt-10">
@@ -85,18 +85,16 @@ const AddTeamToCompScreen = ({ route }) => {
           setItems={setSutazItems}
           listMode="SCROLLVIEW"
           placeholder="Competition"
-          className="bg-slate-200 py-2 px-5"
+          className="bg-slate-100 py-2.5 px-5 rounded-md"
           containerStyle={{ marginTop: 16 }}
-          placeholderStyle={{ color: "gray" }}
+          placeholderStyle={{ color: "#9ca3af" }}
           zIndex={90}
           error={errors.sutaz}
           onOpen={() => {
             handleError("sutaz", null);
           }}
           style={{
-            borderColor: errors.sutaz && "red",
-            borderWidth: errors.sutaz && 1,
-            borderRadius: 0,
+            borderColor: errors.sutaz ? "red" : "#949494",
           }}
         />
         {errors.sutaz && (
@@ -106,7 +104,7 @@ const AddTeamToCompScreen = ({ route }) => {
       <View className="w-4/5 mt-8 mb-5">
         <TouchableOpacity
           onPress={validate}
-          className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
           activeOpacity={0.5}
         >
           <Text className="text-center text-white font-bold">Submit</Text>

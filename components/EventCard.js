@@ -35,13 +35,13 @@ const EventCard = ({
       <View className="py-5 w-full flex-row items-center">
         <View className="flex-1">
           <Text className="text-xl font-semibold">{nazov}</Text>
-          <Text className="text-orange-300">
+          <Text className="text-blue-400">
             {moment(datum_od).format("D MMM, yyyy")} ·{" "}
             {moment(datum_do).format("D MMM, yyyy")}
           </Text>
         </View>
         <View>
-          <Icon name="chevron-forward" size={25} color="#fdba74" />
+          <Icon name="chevron-forward" size={25} color="#60a5fa" />
         </View>
       </View>
     </TouchableOpacity>

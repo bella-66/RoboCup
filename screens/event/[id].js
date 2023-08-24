@@ -34,23 +34,23 @@ const Event = ({ route, navigation }) => {
     <SafeAreaView className="flex-1">
       <View className="w-full h-48 absolute top-0 left-0">
         <LinearGradient
-          colors={["#f97316", "orange"]}
+          colors={["#385bff", "#01BFFD"]}
           style={{ width: "100%", height: "100%" }}
           start={{ x: 0.85, y: 0 }}
         />
       </View>
-      <View className="bg-orange-50 h-full w-full p-5 rounded-t-3xl z-50 mt-24">
+      <View className="bg-white h-full w-full p-5 rounded-t-3xl z-50 mt-24">
         <Text className="text-[28px] font-semibold mt-4 text-center">
           {nazov}
         </Text>
 
         <View className="flex-row items-center mt-16 mb-14">
-          <View className="bg-orange-100 rounded-xl">
+          <View className="bg-blue-100 rounded-xl">
             <Icon
               name="calendar"
               size={27}
               style={{ padding: 7.5 }}
-              color="#fb923c"
+              color="#3b82f6"
             />
           </View>
           <View className="flex-row items-center flex-1 justify-evenly">

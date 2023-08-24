@@ -99,7 +99,7 @@ const AddOrganizationScreen = ({ navigation, route }) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" && "padding"}
-      className="items-center justify-center flex-1 bg-orange-50"
+      className="items-center justify-center flex-1 bg-white"
     >
       <Text className="text-4xl text-center">
         {route.params?.edit ? "Edit Organization" : "Add Organization"}
@@ -116,18 +116,16 @@ const AddOrganizationScreen = ({ navigation, route }) => {
           onSelectItem={(item) => handleChange(item.value, "druh")}
           listMode="SCROLLVIEW"
           placeholder="Type"
-          className="bg-slate-200 py-2 px-5"
+          className="bg-slate-100 py-2.5 px-5 rounded-md"
           containerStyle={{ marginTop: 16 }}
-          placeholderStyle={{ color: "gray" }}
+          placeholderStyle={{ color: "#9ca3af" }}
           zIndex={90}
           error={errors.druh}
           onOpen={() => {
             handleError(null, "druh");
           }}
           style={{
-            borderColor: errors.druh && "red",
-            borderWidth: errors.druh && 1,
-            borderRadius: 0,
+            borderColor: errors.druh ? "red" : "#949494",
           }}
         />
         {errors.druh && (
@@ -179,7 +177,7 @@ const AddOrganizationScreen = ({ navigation, route }) => {
       <View className="w-4/5 mt-8 mb-5">
         <TouchableOpacity
           onPress={validate}
-          className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
           activeOpacity={0.5}
         >
           <Text className="text-center text-white font-bold">Submit</Text>

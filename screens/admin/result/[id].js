@@ -64,7 +64,7 @@ const ResultOne = ({ route, navigation }) => {
       headerTitle: druh_operacie,
       headerTitleStyle: { fontSize: 17 },
       headerStyle: {
-        backgroundColor: "#fff7ed",
+        backgroundColor: "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -83,14 +83,14 @@ const ResultOne = ({ route, navigation }) => {
         <RefreshControl
           refreshing={refreshing}
           onRefresh={onRefresh}
-          colors={["orange"]}
-          tintColor={"orange"}
+          colors={["blue"]}
+          tintColor={"blue"}
         />
       }
     >
-      <View className="bg-orange-50 flex-1 items-center">
+      <View className="bg-white flex-1 items-center">
         <View className="w-11/12 space-y-10 mt-6">
-          <View className="bg-orange-50 rounded-md p-5 w-full space-y-1">
+          <View className="bg-white rounded-md p-5 w-full space-y-1">
             <Text>
               <Text className="font-semibold">ID Timeline:</Text>{" "}
               {info.id_timeline}

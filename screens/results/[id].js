@@ -61,24 +61,24 @@ const Result = ({ route, navigation }) => {
     <SafeAreaView className="flex-1">
       <View className="w-full h-48 absolute top-0 left-0">
         <LinearGradient
-          colors={["#f97316", "orange"]}
+          colors={["#385bff", "#01BFFD"]}
           style={{ width: "100%", height: "100%" }}
           start={{ x: 0.85, y: 0 }}
         />
       </View>
 
-      <View className="bg-orange-50 h-full w-full p-5 rounded-t-3xl z-50 mt-24">
+      <View className="bg-white h-full w-full p-5 rounded-t-3xl z-50 mt-24">
         <View key={result.id_timeline} className="items-center space-y-9 mt-3">
           <Text className="text-3xl font-semibold">{result.druh_operacie}</Text>
 
           <View className="flex-row items-center justify-between w-4/5">
             <View className="flex-row items-center">
-              <View className="bg-orange-100 rounded-xl">
+              <View className="bg-blue-100 rounded-xl">
                 <Icon
                   name="calendar"
                   size={21}
                   style={{ padding: 6 }}
-                  color="#fb923c"
+                  color="#3b82f6"
                 />
               </View>
               <Text className="text-lg text-gray-600 ml-3">
@@ -87,12 +87,12 @@ const Result = ({ route, navigation }) => {
             </View>
 
             <View className="flex-row items-center">
-              <View className="bg-orange-100 rounded-xl">
+              <View className="bg-blue-100 rounded-xl">
                 <Icon
                   name="time"
                   size={21}
                   style={{ padding: 6 }}
-                  color="#fb923c"
+                  color="#3b82f6"
                 />
               </View>
               <Text className="text-lg text-gray-600 ml-3">

@@ -91,7 +91,7 @@ const HomeScreen = ({ navigation }) => {
       headerShown: true,
       headerTitleAlign: "center",
       headerStyle: {
-        backgroundColor: "#fff7ed",
+        backgroundColor: "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -101,13 +101,13 @@ const HomeScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <View className="flex-1 bg-orange-50">
+    <View className="flex-1 bg-white">
       <StatusBar backgroundColor={"transparent"} translucent style="dark" />
       {userInfo?.rola === "Referee" && (
         <>
           <View className="absolute bottom-3 right-3 z-50">
             <FloatingAction
-              color="#fb923c"
+              color="#3b82f6"
               distanceToEdge={1}
               actionsPaddingTopBottom={3}
               actions={[
@@ -123,7 +123,7 @@ const HomeScreen = ({ navigation }) => {
                   ),
                   name: "bt_competition",
                   position: 2,
-                  color: "#fb923c",
+                  color: "#60a5fa",
                   buttonSize: 45,
                 },
                 {
@@ -139,7 +139,7 @@ const HomeScreen = ({ navigation }) => {
                   ),
                   name: "bt_timeline",
                   position: 1,
-                  color: "#fb923c",
+                  color: "#60a5fa",
                 },
               ]}
             />
@@ -160,8 +160,8 @@ const HomeScreen = ({ navigation }) => {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            colors={["orange"]}
-            tintColor={"orange"}
+            colors={["blue"]}
+            tintColor={"blue"}
           />
         }
         renderEmptyDate={() => {
@@ -178,8 +178,8 @@ const HomeScreen = ({ navigation }) => {
                 <RefreshControl
                   refreshing={refreshing}
                   onRefresh={onRefresh}
-                  colors={["orange"]}
-                  tintColor={"orange"}
+                  colors={["blue"]}
+                  tintColor={"blue"}
                 />
               }
               contentContainerStyle={{
@@ -197,13 +197,13 @@ const HomeScreen = ({ navigation }) => {
         theme={{
           agendaDayTextColor: "black",
           agendaDayNumColor: "black",
-          calendarBackground: "#fff7ed",
-          reservationsBackgroundColor: "#fff7ed",
-          agendaTodayColor: "#fdba74",
-          agendaKnobColor: "#fdba74",
-          selectedDayBackgroundColor: "#fdba74",
-          dotColor: "#fdba74",
-          todayTextColor: "#fdba74",
+          calendarBackground: "white",
+          reservationsBackgroundColor: "white",
+          agendaTodayColor: "#60a5fa",
+          agendaKnobColor: "#60a5fa",
+          selectedDayBackgroundColor: "#60a5fa",
+          dotColor: "#60a5fa",
+          todayTextColor: "#60a5fa",
         }}
       />
     </View>

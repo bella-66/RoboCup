@@ -100,7 +100,7 @@ const AddSutazScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView className="bg-orange-50 flex-1">
+    <SafeAreaView className="bg-white flex-1">
       <ScrollView
         contentContainerStyle={{
           flex: 1,
@@ -142,18 +142,16 @@ const AddSutazScreen = () => {
                 setItems={setItems}
                 listMode="SCROLLVIEW"
                 placeholder="Main referee"
-                className="bg-slate-200 py-2 px-5"
+                className="bg-slate-100 py-2.5 px-5 rounded-md"
                 containerStyle={{ marginTop: 16 }}
-                placeholderStyle={{ color: "gray" }}
+                placeholderStyle={{ color: "#9ca3af" }}
                 zIndex={100}
                 error={errors.id_hlavny_rozhodca}
                 onOpen={() => {
                   handleError("id_hlavny_rozhodca", null);
                 }}
                 style={{
-                  borderColor: errors.id_hlavny_rozhodca && "red",
-                  borderWidth: errors.id_hlavny_rozhodca && 1,
-                  borderRadius: 0,
+                  borderColor: errors.id_hlavny_rozhodca ? "red" : "#949494",
                 }}
               />
               {errors.id_hlavny_rozhodca && (
@@ -176,7 +174,7 @@ const AddSutazScreen = () => {
               <TouchableOpacity
                 activeOpacity={0.5}
                 onPress={validate}
-                className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+                className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
               >
                 <Text className="text-center text-white font-bold">Submit</Text>
               </TouchableOpacity>

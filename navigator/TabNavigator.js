@@ -22,7 +22,7 @@ const TabNavigator = () => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarStyle: {
-          backgroundColor: "#fff7ed",
+          backgroundColor: "white",
           height: 55,
           elevation: 0,
           shadowOpacity: 0,
@@ -31,7 +31,7 @@ const TabNavigator = () => {
           minHeight: 70,
           maxHeight: 75,
         },
-        tabBarActiveTintColor: "#ff9f29",
+        tabBarActiveTintColor: "#3b82f6",
         tabBarInactiveTintColor: "rgba(156,163,175,0.6)",
         tabBarItemStyle: {
           marginBottom: 5,
@@ -44,7 +44,7 @@ const TabNavigator = () => {
             return (
               <Icon
                 style={{
-                  backgroundColor: focused ? "#ffedd5" : "none",
+                  backgroundColor: focused ? "#dbeafe" : "none",
                   borderRadius: 10,
                   padding: 7,
                 }}
@@ -57,7 +57,7 @@ const TabNavigator = () => {
             return (
               <Icon
                 style={{
-                  backgroundColor: focused ? "#ffedd5" : "none",
+                  backgroundColor: focused ? "#dbeafe" : "none",
                   borderRadius: 10,
                   padding: 7,
                 }}
@@ -70,7 +70,7 @@ const TabNavigator = () => {
             return (
               <Icon
                 style={{
-                  backgroundColor: focused ? "#ffedd5" : "none",
+                  backgroundColor: focused ? "#dbeafe" : "none",
                   borderRadius: 10,
                   padding: 7,
                 }}
@@ -83,7 +83,7 @@ const TabNavigator = () => {
             return (
               <Icon
                 style={{
-                  backgroundColor: focused ? "#ffedd5" : "none",
+                  backgroundColor: focused ? "#dbeafe" : "none",
                   borderRadius: 10,
                   padding: 7,
                 }}

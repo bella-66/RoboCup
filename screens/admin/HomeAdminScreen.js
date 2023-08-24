@@ -71,7 +71,7 @@ const HomeAdminScreen = ({ navigation }) => {
       headerShown: true,
       headerTitleAlign: "center",
       headerStyle: {
-        backgroundColor: "#fed7aa",
+        backgroundColor: "#60a5fa",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -94,12 +94,12 @@ const HomeAdminScreen = ({ navigation }) => {
         <RefreshControl
           refreshing={refreshing}
           onRefresh={onRefresh}
-          colors={["orange"]}
-          tintColor={"orange"}
+          colors={["blue"]}
+          tintColor={"blue"}
         />
       }
     >
-      <View className="bg-orange-200 flex-1 items-center pt-4">
+      <View className="bg-blue-400 flex-1 items-center pt-4">
         <StatusBar backgroundColor={"transparent"} translucent style="dark" />
         <View className="my-7 w-11/12">
           <Text className="font-semibold text-2xl">
@@ -110,7 +110,7 @@ const HomeAdminScreen = ({ navigation }) => {
         <View className="flex-row w-full flex-wrap items-start justify-evenly gap-y-8">
           <TouchableOpacity
             className="w-2/5 p-5 justify-center items-center space-y-2 rounded-xl"
-            style={{ backgroundColor: "rgba(255, 247, 237, 0.5)" }}
+            style={{ backgroundColor: "rgba(255, 255, 255, 0.6)" }}
             onPress={() => navigation.navigate("Teams")}
             activeOpacity={0.5}
           >
@@ -120,7 +120,7 @@ const HomeAdminScreen = ({ navigation }) => {
 
           <TouchableOpacity
             className="w-2/5 p-5 justify-center items-center space-y-2 rounded-xl"
-            style={{ backgroundColor: "rgba(255, 247, 237, 0.5)" }}
+            style={{ backgroundColor: "rgba(255, 255, 255, 0.6)" }}
             onPress={() => navigation.navigate("Osoba")}
             activeOpacity={0.5}
           >
@@ -130,7 +130,7 @@ const HomeAdminScreen = ({ navigation }) => {
 
           <TouchableOpacity
             className="w-2/5 p-5 justify-center items-center space-y-2 rounded-xl"
-            style={{ backgroundColor: "rgba(255, 247, 237, 0.5)" }}
+            style={{ backgroundColor: "rgba(255, 255, 255, 0.6)" }}
             onPress={() => navigation.navigate("Competitions")}
             activeOpacity={0.5}
           >
@@ -140,7 +140,7 @@ const HomeAdminScreen = ({ navigation }) => {
 
           <TouchableOpacity
             className="w-2/5 p-5 justify-center items-center space-y-2 rounded-xl"
-            style={{ backgroundColor: "rgba(255, 247, 237, 0.5)" }}
+            style={{ backgroundColor: "rgba(255, 255, 255, 0.6)" }}
             onPress={() => navigation.navigate("Events")}
             activeOpacity={0.5}
           >

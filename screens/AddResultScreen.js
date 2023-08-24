@@ -146,7 +146,7 @@ const AddResultScreen = ({ route }) => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-orange-50">
+    <SafeAreaView className="flex-1 bg-white">
       <ScrollView contentContainerStyle={{ flex: 1, justifyContent: "center" }}>
         <KeyboardAvoidingView behavior={Platform.OS === "ios" && "padding"}>
           <Text className="text-3xl text-center">Add Result</Text>
@@ -168,16 +168,14 @@ const AddResultScreen = ({ route }) => {
                 }}
                 listMode="SCROLLVIEW"
                 placeholder="Competition"
-                className="bg-slate-200 py-2 px-5"
-                placeholderStyle={{ color: "gray" }}
+                className="bg-slate-100 py-2.5 px-5 rounded-md"
+                placeholderStyle={{ color: "#9ca3af" }}
                 zIndex={100}
                 onOpen={() => {
                   handleError(null, "id_sutaz");
                 }}
                 style={{
-                  borderColor: errors.id_sutaz && "red",
-                  borderWidth: errors.id_sutaz && 1,
-                  borderRadius: 0,
+                  borderColor: errors.id_sutaz ? "red" : "#949494",
                 }}
               />
               {errors.id_sutaz && (
@@ -202,17 +200,15 @@ const AddResultScreen = ({ route }) => {
                     }}
                     listMode="SCROLLVIEW"
                     placeholder="Timeline"
-                    className="bg-slate-200 py-2 px-5"
+                    className="bg-slate-100 py-2.5 px-5 rounded-md"
                     containerStyle={{ marginTop: 16 }}
-                    placeholderStyle={{ color: "gray" }}
+                    placeholderStyle={{ color: "#9ca3af" }}
                     zIndex={90}
                     onOpen={() => {
                       handleError(null, "id_timeline");
                     }}
                     style={{
-                      borderColor: errors.id_timeline && "red",
-                      borderWidth: errors.id_timeline && 1,
-                      borderRadius: 0,
+                      borderColor: errors.id_timeline ? "red" : "#949494",
                     }}
                   />
                   {errors.id_timeline && (
@@ -261,7 +257,7 @@ const AddResultScreen = ({ route }) => {
             <View className="w-4/5 mt-12 mb-5">
               <TouchableOpacity
                 onPress={validate}
-                className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+                className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
               >
                 <Text className="text-center text-white font-bold">Submit</Text>
               </TouchableOpacity>

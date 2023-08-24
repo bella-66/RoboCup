@@ -53,9 +53,7 @@ const ProfileScreen = ({ navigation }) => {
       headerTitleAlign: "center",
       headerStyle: {
         backgroundColor:
-          userInfo !== "without account"
-            ? "rgba(251, 146, 60, 0.9)"
-            : "#fff7ed",
+          userInfo !== "without account" ? "rgb(96, 165, 250)" : "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -72,11 +70,11 @@ const ProfileScreen = ({ navigation }) => {
     <>
       <StatusBar backgroundColor={"transparent"} translucent style="dark" />
       {userInfo === "without account" ? (
-        <View className="flex-1 bg-orange-50 items-center justify-center">
+        <View className="flex-1 bg-white items-center justify-center">
           <Text>Sign up!</Text>
           <View className="w-4/5">
             <Pressable
-              className="w-full shadow-xl px-2 py-3 bg-orange-400 rounded-md shadow-orange-600"
+              className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
               onPress={logout}
             >
               <Text className="text-center text-white font-bold">Login</Text>
@@ -97,10 +95,10 @@ const ProfileScreen = ({ navigation }) => {
               <Dialog.Button label="Cancel" onPress={handleCancel} />
             </Dialog.Container>
           </View>
-          <View className="items-center justify-around flex-1 bg-orange-50">
+          <View className="items-center justify-around flex-1 bg-white">
             <View
               className="h-32 w-full justify-center items-center"
-              style={{ backgroundColor: "rgba(251, 146, 60, 0.9)" }}
+              style={{ backgroundColor: "rgb(96, 165, 250)" }}
             >
               <View className="w-11/12 items-center justify-between flex-row">
                 <View>
@@ -114,7 +112,7 @@ const ProfileScreen = ({ navigation }) => {
                 <Icon
                   name="create-outline"
                   size={30}
-                  color="#fff7ed"
+                  color="white"
                   onPress={() => navigation.navigate("EditProfile")}
                 />
               </View>
@@ -148,7 +146,7 @@ const ProfileScreen = ({ navigation }) => {
                         return (
                           <TouchableOpacity
                             key={item.id_tim}
-                            className="bg-orange-400 p-3 rounded-xl mr-3 mb-4"
+                            className="bg-blue-500 p-3 rounded-xl mr-3 mb-4"
                             activeOpacity={0.6}
                             onPress={() =>
                               navigation.navigate("UserTeamComps", {
@@ -156,7 +154,7 @@ const ProfileScreen = ({ navigation }) => {
                               })
                             }
                           >
-                            <Text className="text-orange-50">{item.nazov}</Text>
+                            <Text className="text-white">{item.nazov}</Text>
                           </TouchableOpacity>
                         );
                       })}
@@ -168,7 +166,7 @@ const ProfileScreen = ({ navigation }) => {
 
             <View className="w-4/5 mb-6">
               <TouchableOpacity
-                className="w-full shadow-lg px-2 py-3 bg-orange-400 rounded-md shadow-orange-500"
+                className="w-full shadow-lg px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
                 onPress={showDialog}
                 activeOpacity={0.5}
               >

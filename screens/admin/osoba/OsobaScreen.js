@@ -22,7 +22,7 @@ const OsobaScreen = ({ navigation }) => {
       headerTitle: "Users",
       headerTitleAlign: "center",
       headerStyle: {
-        backgroundColor: "#fff7ed",
+        backgroundColor: "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -56,7 +56,7 @@ const OsobaScreen = ({ navigation }) => {
   };
 
   return (
-    <View className="bg-orange-50 flex-1">
+    <View className="bg-white flex-1">
       <FlatList
         data={data}
         renderItem={({ item, index, separators }) => (
@@ -85,8 +85,8 @@ const OsobaScreen = ({ navigation }) => {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            colors={["orange"]}
-            tintColor={"orange"}
+            colors={["blue"]}
+            tintColor={"blue"}
           />
         }
       />

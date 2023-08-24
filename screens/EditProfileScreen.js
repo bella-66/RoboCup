@@ -77,7 +77,7 @@ const EditProfileScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <SafeAreaView className="bg-orange-50 flex-1 justify-center">
+    <SafeAreaView className="bg-white flex-1 justify-center">
       <View className="">
         <ScrollView>
           <KeyboardAvoidingView behavior={Platform.OS === "ios" && "padding"}>
@@ -132,13 +132,13 @@ const EditProfileScreen = ({ navigation }) => {
                     handleError(null, "telefon");
                   }}
                   style={{
-                    backgroundColor: "#e2e8f0",
+                    backgroundColor: "#f1f5f9",
                     marginTop: 16,
                     paddingHorizontal: 8,
                     paddingVertical: 16,
-                    borderColor: errors.telefon && "red",
-                    borderWidth: errors.telefon && 1,
-                    borderRadius: 0,
+                    borderColor: errors.telefon ? "red" : "#949494",
+                    borderWidth: 1,
+                    borderRadius: 6,
                   }}
                   textProps={{
                     placeholder: "Phone number",

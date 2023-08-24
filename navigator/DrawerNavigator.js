@@ -19,8 +19,8 @@ const DrawerNavigator = () => {
     <Drawer.Navigator
       initialRouteName="HomeAdmin"
       screenOptions={{
-        drawerActiveBackgroundColor: "#ffedd5",
-        drawerActiveTintColor: "#f97316",
+        drawerActiveBackgroundColor: "#dbeafe",
+        drawerActiveTintColor: "#3b82f6",
       }}
     >
       <Drawer.Screen

@@ -23,7 +23,7 @@ const TimelineScreen = ({ navigation }) => {
       headerTitle: "Timeline",
       headerTitleAlign: "center",
       headerStyle: {
-        backgroundColor: "#fff7ed",
+        backgroundColor: "white",
         elevation: 0,
         shadowOpacity: 0,
         shadowColor: "transparent",
@@ -57,7 +57,7 @@ const TimelineScreen = ({ navigation }) => {
   };
 
   return (
-    <View className="bg-orange-50 flex-1">
+    <View className="bg-white flex-1">
       <FlatList
         data={data}
         renderItem={({ item, index, separators }) => (
@@ -85,8 +85,8 @@ const TimelineScreen = ({ navigation }) => {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            colors={["orange"]}
-            tintColor={"orange"}
+            colors={["blue"]}
+            tintColor={"blue"}
           />
         }
       />
