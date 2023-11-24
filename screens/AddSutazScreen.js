@@ -54,21 +54,16 @@ const AddSutazScreen = () => {
     }
     if (valid) {
       try {
-        axios
-          .post(`${BASE_URL}/competition`, inputs)
-          .then(() => {
-            Toast.show("Competition added successfully!", Toast.SHORT);
-            setInputs({
-              nazov: "",
-              charakteristika: "",
-              id_hlavny_rozhodca: "",
-              postupova_kvota: "",
-            });
-            setValue("");
-          })
-          .catch((e) => {
-            Alert.alert("Oops!", "Something went wrong.");
+        axios.post(`${BASE_URL}/competition`, inputs).then(() => {
+          Toast.show("Competition added successfully!", Toast.SHORT);
+          setInputs({
+            nazov: "",
+            charakteristika: "",
+            id_hlavny_rozhodca: "",
+            postupova_kvota: "",
           });
+          setValue("");
+        });
       } catch (error) {
         Alert.alert("Oops!", "Something went wrong.");
       }

@@ -1,7 +1,7 @@
 import { View, Text, RefreshControl, FlatList, Alert } from "react-native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
-import { Divider, FAB } from "@rneui/themed";
+import { FAB } from "@rneui/themed";
 import useAuth from "../../context/AuthContext";
 import { BASE_URL } from "../../url";
 import moment from "moment";

@@ -56,9 +56,6 @@ const TimelineOne = ({ route, navigation }) => {
         .then(() => {
           Toast.show("Timeline deleted successfully!", Toast.SHORT);
           navigation.goBack();
-        })
-        .catch((error) => {
-          Alert.alert("Oops!", "Something went wrong.");
         });
     } catch (erorr) {
       Alert.alert("Oops!", "Something went wrong.");

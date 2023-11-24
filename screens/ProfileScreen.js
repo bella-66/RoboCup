@@ -11,7 +11,6 @@ import useAuth from "../context/AuthContext";
 import axios from "axios";
 import { BASE_URL } from "../url";
 import ProfileInfo from "../components/ProfileInfo";
-import { StatusBar } from "expo-status-bar";
 import Dialog from "react-native-dialog";
 import moment from "moment";
 import Icon from "react-native-vector-icons/Ionicons";

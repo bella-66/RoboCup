@@ -6,7 +6,6 @@ import Icon from "react-native-vector-icons/Ionicons";
 import moment from "moment";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import { Divider } from "@rneui/themed";
 
 const Timeline = ({ route, navigation }) => {
   const { id_timeline } = route.params;

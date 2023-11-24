@@ -5,7 +5,6 @@ import { BASE_URL } from "../url";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import moment from "moment";
 import Toast from "react-native-simple-toast";
-import { auth } from "../firebaseConfig";
 
 export const AuthContext = createContext();
 
@@ -31,17 +30,17 @@ export const AuthProvider = ({ children }) => {
     loadUser();
   }, []);
 
-  const continueWithoutAccount = async () => {
-    setIsLoading(true);
-    setUserInfo("without account");
-    await AsyncStorage.setItem("userInfo", JSON.stringify("without account"))
-      .then(() => {
-        Toast.show("Registered successfully!", Toast.SHORT);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+  // const continueWithoutAccount = async () => {
+  //   setIsLoading(true);
+  //   setUserInfo("without account");
+  //   await AsyncStorage.setItem("userInfo", JSON.stringify("without account"))
+  //     .then(() => {
+  //       Toast.show("Registered successfully!", Toast.SHORT);
+  //     })
+  //     .finally(() => {
+  //       setIsLoading(false);
+  //     });
+  // };
 
   const register = async (inputs, digest) => {
     setIsLoading(true);

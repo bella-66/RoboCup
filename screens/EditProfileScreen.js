@@ -66,7 +66,7 @@ const EditProfileScreen = ({ navigation }) => {
       handleError("Enter zip code", "psc");
       valid = false;
     }
-    if (!inputs.psc.replace(" ", "").length === 5) {
+    if (inputs.psc.replace(" ", "").length !== 5) {
       handleError("Enter valid zip code", "psc");
       valid = false;
     }
