@@ -147,32 +147,27 @@ const EventOne = ({ route, navigation }) => {
             </Text>
             <Text>
               <Text className="font-semibold">Organizers:</Text>{" "}
+              {infoOrganizatori
+                .map(
+                  (item) => item.nazov + " · " + item.druh + " · " + item.stat
+                )
+                .join(", ")}
             </Text>
-            {infoOrganizatori.map((item) => {
-              return (
-                <Text key={item.id_organizacia}>
-                  {item.nazov} · {item.druh} · {item.stat}
-                </Text>
-              );
-            })}
+
             <Text>
               <Text className="font-semibold">
                 People responsible for organizing:
               </Text>{" "}
+              {infoOsoby
+                .map((item) => item.meno + " " + item.priezvisko)
+                .join(", ")}
             </Text>
-            {infoOsoby.map((item) => {
-              return (
-                <Text key={item.id_osoba}>
-                  {item.meno} {item.priezvisko} · {item.rola}
-                </Text>
-              );
-            })}
           </View>
 
           <View className="items-center">
             <View className="flex-row justify-center space-x-3 w-full">
               <TouchableOpacity
-                className="w-1/2 shadow-xl px-2 py-3 bg-green-500 rounded-md shadow-green-600"
+                className="w-1/2 shadow-xl px-2 py-3 bg-editButton rounded-md shadow-editButtonShadow"
                 onPress={handleEdit}
                 activeOpacity={0.5}
               >
@@ -180,7 +175,7 @@ const EventOne = ({ route, navigation }) => {
               </TouchableOpacity>
 
               <TouchableOpacity
-                className="w-1/2 shadow-xl px-2 py-3 bg-red-500 rounded-md shadow-red-600"
+                className="w-1/2 shadow-xl px-2 py-3 bg-deleteButton rounded-md shadow-deleteButtonShadow"
                 onPress={handleDelete}
                 activeOpacity={0.5}
               >

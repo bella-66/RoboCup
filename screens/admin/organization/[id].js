@@ -115,7 +115,7 @@ const OrganizationOne = ({ route, navigation }) => {
           <View className="items-center">
             <View className="flex-row justify-center space-x-3 w-full">
               <TouchableOpacity
-                className="w-1/2 shadow-xl px-2 py-3 bg-green-500 rounded-md shadow-green-600"
+                className="w-1/2 shadow-xl px-2 py-3 bg-editButton rounded-md shadow-editButtonShadow"
                 onPress={handleEdit}
                 activeOpacity={0.5}
               >
@@ -123,7 +123,7 @@ const OrganizationOne = ({ route, navigation }) => {
               </TouchableOpacity>
 
               <TouchableOpacity
-                className="w-1/2 shadow-xl px-2 py-3 bg-red-500 rounded-md shadow-red-600"
+                className="w-1/2 shadow-xl px-2 py-3 bg-deleteButton rounded-md shadow-deleteButtonShadow"
                 onPress={handleDelete}
                 activeOpacity={0.5}
               >

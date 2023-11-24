@@ -42,7 +42,7 @@ const Timeline = ({ route, navigation }) => {
 
   return (
     <SafeAreaView className="flex-1">
-      <View className="w-full h-48 absolute top-0 left-0">
+      <View className="w-full h-52 absolute top-0 left-0">
         <LinearGradient
           colors={["#385bff", "#01BFFD"]}
           style={{ width: "100%", height: "100%" }}
@@ -50,8 +50,8 @@ const Timeline = ({ route, navigation }) => {
         />
       </View>
 
-      <View className="space-y-12 bg-white h-full w-full p-5 rounded-t-3xl z-50 mt-24">
-        <Text className="text-2xl mt-3 font-semibold uppercase text-center">
+      <View className="space-y-12 bg-white h-full w-full p-5 rounded-t-3xl z-50 mt-32">
+        <Text className="text-2xl mt-3 font-semibold text-center">
           {timeline.nazov}
         </Text>
 
@@ -62,7 +62,7 @@ const Timeline = ({ route, navigation }) => {
 
           <View className="space-y-3">
             <View className="flex-row items-center">
-              <View className="bg-blue-100 rounded-xl mr-3">
+              <View className="bg-iconBackground rounded-xl mr-3">
                 <Icon
                   name="calendar"
                   size={21}
@@ -70,13 +70,13 @@ const Timeline = ({ route, navigation }) => {
                   color="#3b82f6"
                 />
               </View>
-              <Text className="text-lg text-gray-600">
+              <Text className="text-lg text-secondaryText">
                 {moment(timeline.datum_a_cas).format("D MMM yyyy")}
               </Text>
             </View>
 
             <View className="flex-row items-center">
-              <View className="bg-blue-100 rounded-xl mr-3">
+              <View className="bg-iconBackground rounded-xl mr-3">
                 <Icon
                   name="time"
                   size={21}
@@ -84,7 +84,7 @@ const Timeline = ({ route, navigation }) => {
                   color="#3b82f6"
                 />
               </View>
-              <Text className="text-lg text-gray-600">
+              <Text className="text-lg text-secondaryText">
                 {moment(timeline.datum_a_cas).format("H:mm")}
               </Text>
             </View>
@@ -93,7 +93,7 @@ const Timeline = ({ route, navigation }) => {
               timeline.druh_operacie !== "Meeting" && (
                 <View>
                   <View className="flex-row items-center">
-                    <View className="bg-blue-100 rounded-xl mr-3">
+                    <View className="bg-iconBackground rounded-xl mr-3">
                       <Icon
                         name="people"
                         size={21}
@@ -102,11 +102,11 @@ const Timeline = ({ route, navigation }) => {
                       />
                     </View>
                     {timeline.tim2 ? (
-                      <Text className="text-[16px] text-gray-600">
+                      <Text className="text-[16px] text-secondaryText">
                         {timeline.tim1} | {timeline.tim2}
                       </Text>
                     ) : (
-                      <Text className="text-[16px] text-gray-600">
+                      <Text className="text-[16px] text-secondaryText">
                         {timeline.tim1}
                       </Text>
                     )}
@@ -117,16 +117,16 @@ const Timeline = ({ route, navigation }) => {
         </View>
         <View className="space-y-5">
           <View>
-            <Text className="text-lg font-semibold">About</Text>
-            <Text className="text-[16px] text-gray-600">
-              {timeline.charakteristika}
+            <Text className="text-lg font-semibold">Advancement quota</Text>
+            <Text className="text-[16px] text-secondaryText">
+              {timeline.postupova_kvota}
             </Text>
           </View>
 
           <View>
-            <Text className="text-lg font-semibold">Advancement quota</Text>
-            <Text className="text-[16px] text-gray-600">
-              {timeline.postupova_kvota}
+            <Text className="text-lg font-semibold">About</Text>
+            <Text className="text-[16px] text-secondaryText">
+              {timeline.charakteristika}
             </Text>
           </View>
         </View>

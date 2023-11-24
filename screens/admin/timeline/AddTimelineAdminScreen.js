@@ -252,14 +252,14 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                 zIndex={120}
                 onOpen={() => handleError(null, "id_sutaz")}
                 error={errors.id_sutaz}
-                className="bg-slate-100 py-2.5 px-5 rounded-md"
+                className="bg-inputBackground py-2.5 px-5 rounded-md"
                 style={{
                   borderColor: errors.id_sutaz ? "red" : "#949494",
                 }}
                 containerStyle={{ marginTop: 16 }}
               />
               {errors.id_sutaz && (
-                <Text className="text-red-500 text-[12px] mt-1">
+                <Text className="text-error text-[12px] mt-1">
                   {errors.id_sutaz}
                 </Text>
               )}
@@ -281,14 +281,14 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                 zIndex={100}
                 onOpen={() => handleError(null, "druh_operacie")}
                 error={errors.druh_operacie}
-                className="bg-slate-100 py-2.5 px-5 rounded-md"
+                className="bg-inputBackground py-2.5 px-5 rounded-md"
                 style={{
                   borderColor: errors.druh_operacie ? "red" : "#949494",
                 }}
                 containerStyle={{ marginTop: 16 }}
               />
               {errors.druh_operacie && (
-                <Text className="text-red-500 text-[12px] mt-1">
+                <Text className="text-error text-[12px] mt-1">
                   {errors.druh_operacie}
                 </Text>
               )}
@@ -310,14 +310,14 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                 zIndex={90}
                 onOpen={() => handleError(null, "id_tim_1")}
                 error={errors.id_tim_1}
-                className="bg-slate-100 py-2.5 px-5 rounded-md"
+                className="bg-inputBackground py-2.5 px-5 rounded-md"
                 style={{
                   borderColor: errors.id_tim_1 ? "red" : "#949494",
                 }}
                 containerStyle={{ marginTop: 16 }}
               />
               {errors.id_tim_1 && (
-                <Text className="text-red-500 text-[12px] mt-1">
+                <Text className="text-error text-[12px] mt-1">
                   {errors.id_tim_1}
                 </Text>
               )}
@@ -338,7 +338,7 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                     placeholder="Team 2"
                     placeholderStyle={{ color: "#9ca3af" }}
                     zIndex={80}
-                    className="bg-slate-100 py-2.5 px-5 rounded-md"
+                    className="bg-inputBackground py-2.5 px-5 rounded-md"
                     onOpen={() => handleError(null, "id_tim_2")}
                     error={errors.id_tim_2}
                     style={{
@@ -347,7 +347,7 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
                     containerStyle={{ marginTop: 16 }}
                   />
                   {errors.id_tim_2 && (
-                    <Text className="text-red-500 text-[12px] mt-1">
+                    <Text className="text-error text-[12px] mt-1">
                       {errors.id_tim_2}
                     </Text>
                   )}
@@ -358,7 +358,7 @@ const AddTimelineAdminScreen = ({ navigation, route }) => {
             <View className="w-4/5 mt-8 mb-5 space-y-5">
               <TouchableOpacity
                 onPress={validate}
-                className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+                className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow"
                 activeOpacity={0.5}
               >
                 <Text className="text-center text-white font-bold">Submit</Text>

@@ -123,7 +123,7 @@ const CompetitionOne = ({ route, navigation }) => {
               }}
             >
               <Icon name="add-circle" size={24} color={"#3b82f6"} />
-              <Text className="text-blue-500 text-lg ml-1">
+              <Text className="text-primary text-lg ml-1">
                 Add team to competition
               </Text>
             </TouchableOpacity>
@@ -132,7 +132,7 @@ const CompetitionOne = ({ route, navigation }) => {
           <View className="items-center">
             <View className="flex-row justify-center space-x-3 w-full">
               <TouchableOpacity
-                className="w-1/2 shadow-xl px-2 py-3 bg-green-500 rounded-md shadow-green-600"
+                className="w-1/2 shadow-xl px-2 py-3 bg-editButton rounded-md shadow-editButtonShadow"
                 onPress={handleEdit}
                 activeOpacity={0.5}
               >
@@ -140,7 +140,7 @@ const CompetitionOne = ({ route, navigation }) => {
               </TouchableOpacity>
 
               <TouchableOpacity
-                className="w-1/2 shadow-xl px-2 py-3 bg-red-500 rounded-md shadow-red-600"
+                className="w-1/2 shadow-xl px-2 py-3 bg-deleteButton rounded-md shadow-deleteButtonShadow"
                 onPress={handleDelete}
                 activeOpacity={0.5}
               >

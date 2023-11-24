@@ -9,6 +9,7 @@ import {
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { BASE_URL } from "../url";
 import axios from "axios";
+import ResultListItem from "../components/ResultListItem";
 
 const UserTeamComps = ({ route, navigation }) => {
   const { id_tim } = route.params;
@@ -55,37 +56,29 @@ const UserTeamComps = ({ route, navigation }) => {
 
   return (
     <View className="flex-1 bg-white">
-      <FlatList
-        className="mt-4"
-        data={sutaze}
-        renderItem={({ item, index, separators }) => {
-          return (
-            <TouchableOpacity
-              className="items-center"
-              onPress={() =>
-                navigation.navigate("ListComps", {
-                  id_sutaz: item.id_sutaz,
-                  nazov: item.nazov,
-                })
-              }
-              key={item.id_sutaz}
-              activeOpacity={0.5}
-            >
-              <View className="bg-blue-400 mb-5 py-5 px-4 w-4/5 items-center rounded-lg">
-                <Text className="text-lg">{item.nazov}</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
-        refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefresh}
-            colors={["blue"]}
-            tintColor={"blue"}
-          />
-        }
-      />
+      {sutaze.length === 0 ? (
+        <Text className="text-center mt-10 text-medium">
+          No results to show!
+        </Text>
+      ) : (
+        <FlatList
+          className="mt-4"
+          data={sutaze}
+          renderItem={({ item, index, separators }) => {
+            return (
+              <ResultListItem id_sutaz={item.id_sutaz} nazov={item.nazov} />
+            );
+          }}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+              colors={["blue"]}
+              tintColor={"blue"}
+            />
+          }
+        />
+      )}
     </View>
   );
 };

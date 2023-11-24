@@ -54,11 +54,7 @@ const RootNavigator = () => {
             name="Register"
             component={RegisterScreen}
           />
-          <RootStack.Screen
-            options={{ headerShown: false }}
-            name="RegisterTeam"
-            component={RegisterTeamScreen}
-          />
+
           <RootStack.Screen
             options={{ headerShown: false }}
             name="ForgotPassword"
@@ -131,8 +127,8 @@ const RootNavigator = () => {
             name="ListComps"
             component={ListCompsScreen}
             options={{
-              animation: "fade",
-              animationDuration: 800,
+              animation: "slide_from_right",
+              animationDuration: 600,
             }}
           />
           <RootStack.Screen
@@ -190,6 +186,11 @@ const RootNavigator = () => {
             component={ResultByTeamScreen}
           />
           <RootStack.Screen name="UserTeamComps" component={UserTeamComps} />
+          <RootStack.Screen
+            options={{ headerShown: false }}
+            name="RegisterTeam"
+            component={RegisterTeamScreen}
+          />
         </RootStack.Group>
       )}
     </RootStack.Navigator>

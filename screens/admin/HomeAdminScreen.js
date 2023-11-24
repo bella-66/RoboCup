@@ -99,7 +99,7 @@ const HomeAdminScreen = ({ navigation }) => {
         />
       }
     >
-      <View className="bg-blue-400 flex-1 items-center pt-4">
+      <View className="bg-lightPrimary flex-1 items-center pt-4">
         <StatusBar backgroundColor={"transparent"} translucent style="dark" />
         <View className="my-7 w-11/12">
           <Text className="font-semibold text-2xl">

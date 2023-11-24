@@ -23,7 +23,7 @@ const RegisterTeamScreen = () => {
       for (let i = 0; i < data.length; i++) {
         arr.push({
           value: data[i].id_organizacia,
-          label: `${data[i].nazov} - ${data[i].druh} - ${data[i].stat}`,
+          label: `${data[i].nazov}`, //· ${data[i].druh}
         });
       }
       setOrganizaciaItems(arr);
@@ -55,7 +55,7 @@ const RegisterTeamScreen = () => {
             setName("");
             setOrganizaciaValue("");
           })
-          .catch((err) => alert(err));
+          .catch((err) => Alert.alert("Oops!", "Something went wrong."));
       } catch (error) {
         Alert.alert("Oops!", "Something went wrong.");
       }
@@ -104,7 +104,7 @@ const RegisterTeamScreen = () => {
           setItems={setOrganizaciaItems}
           listMode="SCROLLVIEW"
           placeholder="Organization"
-          className="bg-slate-100 py-2.5 px-5 rounded-md"
+          className="bg-inputBackground py-2.5 px-5 rounded-md"
           containerStyle={{ marginTop: 16 }}
           placeholderStyle={{ color: "#9ca3af" }}
           zIndex={90}
@@ -113,13 +113,11 @@ const RegisterTeamScreen = () => {
             handleError("organizacia", null);
           }}
           style={{
-            borderColor: errors.organizacia && "red",
-            borderWidth: errors.organizacia && 1,
-            borderRadius: 0,
+            borderColor: errors.organizacia ? "red" : "#949494",
           }}
         />
         {errors.organizacia && (
-          <Text className="text-red-500 text-[12px] mt-1">
+          <Text className="text-error text-[12px] mt-1">
             {errors.organizacia}
           </Text>
         )}
@@ -127,7 +125,7 @@ const RegisterTeamScreen = () => {
       <View className="w-4/5 mt-8 mb-5">
         <Pressable
           onPress={validate}
-          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+          className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow"
         >
           <Text className="text-center text-white font-bold">Submit</Text>
         </Pressable>

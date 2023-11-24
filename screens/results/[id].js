@@ -73,7 +73,7 @@ const Result = ({ route, navigation }) => {
 
           <View className="flex-row items-center justify-between w-4/5">
             <View className="flex-row items-center">
-              <View className="bg-blue-100 rounded-xl">
+              <View className="bg-iconBackground rounded-xl">
                 <Icon
                   name="calendar"
                   size={21}
@@ -81,13 +81,13 @@ const Result = ({ route, navigation }) => {
                   color="#3b82f6"
                 />
               </View>
-              <Text className="text-lg text-gray-600 ml-3">
+              <Text className="text-lg text-secondaryText ml-3">
                 {moment(result.datum_a_cas).format("D MMM, yyyy")}
               </Text>
             </View>
 
             <View className="flex-row items-center">
-              <View className="bg-blue-100 rounded-xl">
+              <View className="bg-iconBackground rounded-xl">
                 <Icon
                   name="time"
                   size={21}
@@ -95,7 +95,7 @@ const Result = ({ route, navigation }) => {
                   color="#3b82f6"
                 />
               </View>
-              <Text className="text-lg text-gray-600 ml-3">
+              <Text className="text-lg text-secondaryText ml-3">
                 {moment(result.datum_a_cas).format("H:mm")}
               </Text>
             </View>

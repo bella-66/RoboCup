@@ -15,7 +15,7 @@ const Input = ({
   return (
     <View className="mt-4 ">
       <View
-        className="flex-row bg-slate-100 py-2.5 px-5 border items-center rounded-md"
+        className="flex-row bg-inputBackground py-2.5 px-5 border items-center rounded-md"
         style={{
           borderColor: error ? "red" : isFocused ? "#2563eb" : "#949494",
         }}
@@ -44,7 +44,7 @@ const Input = ({
           />
         )}
       </View>
-      {error && <Text className="text-red-500 text-[12px] mt-1">{error}</Text>}
+      {error && <Text className="text-error text-[12px] mt-1">{error}</Text>}
     </View>
   );
 };

@@ -73,7 +73,7 @@ const ResetPasswordScreen = () => {
       />
       <View className="w-4/5 mt-10">
         <Pressable
-          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700 mt-8"
+          className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow mt-8"
           activeOpacity={0.5}
           onPress={validate}
         >

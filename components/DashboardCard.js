@@ -9,7 +9,7 @@ const DashboardCard = ({ date, druh, sutaz, tim1, tim2, id_timeline }) => {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate("Timeline", { id_timeline })}
-      className="bg-blue-400 py-1 px-6 h-32 my-4 mx-5 rounded-md flex-row items-center space-x-5"
+      className="bg-lightPrimary py-1 px-6 h-32 my-4 mx-5 rounded-md flex-row items-center space-x-5"
       activeOpacity={0.5}
     >
       <View className="justify-around flex-1 h-full">

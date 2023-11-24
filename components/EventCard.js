@@ -35,7 +35,7 @@ const EventCard = ({
       <View className="py-5 w-full flex-row items-center">
         <View className="flex-1">
           <Text className="text-xl font-semibold">{nazov}</Text>
-          <Text className="text-blue-400">
+          <Text className=" text-secondary">
             {moment(datum_od).format("D MMM, yyyy")} ·{" "}
             {moment(datum_do).format("D MMM, yyyy")}
           </Text>

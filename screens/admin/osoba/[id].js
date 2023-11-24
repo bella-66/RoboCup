@@ -62,6 +62,7 @@ const OsobaOne = ({ route }) => {
       meno: info.meno,
       priezvisko: info.priezvisko,
       email: info.email,
+      mesto: info.mesto,
       adresa_domu: info.adresa_domu,
       datum_narodenia: info.datum_narodenia,
       telefon: info.telefon,
@@ -134,7 +135,9 @@ const OsobaOne = ({ route }) => {
             </Text>
             <Text>
               <Text className="font-semibold">Address:</Text>{" "}
-              {info.adresa_domu ? info.adresa_domu : "NULL"}
+              {info.adresa_domu
+                ? info.mesto + ", " + info.adresa_domu + ", " + info.psc
+                : "NULL"}
             </Text>
             <Text>
               <Text className="font-semibold">Date of birth:</Text>{" "}
@@ -158,19 +161,14 @@ const OsobaOne = ({ route }) => {
             <Text>
               <Text className="font-semibold">Teams:</Text>{" "}
               {tim.length === 0 && <Text>None</Text>}
+              {tim.length !== 0 && tim.map((item) => item.nazov).join(", ")}
             </Text>
-            {tim.length !== 0 &&
-              tim.map((item) => (
-                <Text className="" key={item.id_tim}>
-                  {item.nazov}{" "}
-                </Text>
-              ))}
           </View>
 
           <View className="items-center">
             <View className="flex-row justify-center space-x-3 w-full">
               <TouchableOpacity
-                className="w-1/2 shadow-xl px-2 py-3 bg-green-500 rounded-md shadow-green-600"
+                className="w-1/2 shadow-xl px-2 py-3 bg-editButton rounded-md shadow-editButtonShadow"
                 onPress={handleEdit}
                 activeOpacity={0.5}
               >
@@ -178,7 +176,7 @@ const OsobaOne = ({ route }) => {
               </TouchableOpacity>
 
               <TouchableOpacity
-                className="w-1/2 shadow-xl px-2 py-3 bg-red-500 rounded-md shadow-red-600"
+                className="w-1/2 shadow-xl px-2 py-3 bg-deleteButton rounded-md shadow-deleteButtonShadow"
                 onPress={handleDelete}
                 activeOpacity={0.5}
               >

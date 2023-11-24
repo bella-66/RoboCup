@@ -17,7 +17,9 @@ const EditProfileScreen = ({ navigation }) => {
   const [inputs, setInputs] = useState({
     meno: userInfo?.meno,
     priezvisko: userInfo?.priezvisko,
+    mesto: userInfo?.mesto,
     adresa_domu: userInfo?.adresa_domu,
+    psc: userInfo?.psc,
     telefon: userInfo?.telefon,
     email: userInfo?.email,
   });
@@ -52,8 +54,20 @@ const EditProfileScreen = ({ navigation }) => {
       handleError("Enter last name", "priezvisko");
       valid = false;
     }
+    if (!inputs.mesto) {
+      handleError("Enter town", "mesto");
+      valid = false;
+    }
     if (!inputs.adresa_domu) {
       handleError("Enter address", "adresa_domu");
+      valid = false;
+    }
+    if (!inputs.psc) {
+      handleError("Enter zip code", "psc");
+      valid = false;
+    }
+    if (!inputs.psc.replace(" ", "").length === 5) {
+      handleError("Enter valid zip code", "psc");
       valid = false;
     }
     if (!phoneInput.current?.isValidNumber()) {
@@ -115,13 +129,31 @@ const EditProfileScreen = ({ navigation }) => {
                   }}
                 />
                 <Input
+                  value={inputs.mesto}
+                  placeholder="Town"
+                  error={errors.mesto}
+                  onChangeText={(text) => {
+                    handleChange(text, "mesto");
+                    handleError(null, "mesto");
+                  }}
+                />
+                <Input
                   value={inputs.adresa_domu}
-                  autoComplete="postal-address"
-                  placeholder="Adress"
+                  placeholder="Street adress"
                   error={errors.adresa_domu}
                   onChangeText={(text) => {
                     handleChange(text, "adresa_domu");
                     handleError(null, "adresa_domu");
+                  }}
+                />
+                <Input
+                  placeholder="Zip code"
+                  keyboardType="numeric"
+                  value={inputs.psc}
+                  error={errors.psc}
+                  onChangeText={(text) => {
+                    handleChange(text, "psc");
+                    handleError(null, "psc");
                   }}
                 />
                 <PhoneInput
@@ -146,7 +178,7 @@ const EditProfileScreen = ({ navigation }) => {
                   autoFormat={true}
                 />
                 {errors.telefon && (
-                  <Text className="text-red-500 text-[12px] mt-1">
+                  <Text className="text-error text-[12px] mt-1">
                     {errors.telefon}
                   </Text>
                 )}

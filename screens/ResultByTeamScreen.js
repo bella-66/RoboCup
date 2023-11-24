@@ -102,7 +102,7 @@ const ResultByTeamScreen = ({ route, navigation }) => {
                   </View>
 
                   <View>
-                    <Text className="text-[15px] text-gray-600">
+                    <Text className="text-[15px] text-secondaryText">
                       {moment(item.datum_a_cas).format("D/M/yyyy")} ·{" "}
                       {moment(item.datum_a_cas).format("H:mm")}
                     </Text>

@@ -79,7 +79,7 @@ const EventScreen = ({ navigation }) => {
           backgroundColor: "#60a5fa",
           height: 3,
         }}
-        titleStyle={{ color: "#60a5fa" }}
+        titleStyle={{ color: "black" }}
       >
         <Tab.Item>Upcoming</Tab.Item>
         <Tab.Item>Past</Tab.Item>

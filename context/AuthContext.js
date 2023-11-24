@@ -87,7 +87,7 @@ export const AuthProvider = ({ children }) => {
         }
       })
       .catch((e) => {
-        Alert.alert("Oops!", "Could not login.");
+        Alert.alert("Oops!", e.message);
       })
       .finally(() => {
         setIsLoading(false);

@@ -47,8 +47,20 @@ const RegisterScreen = ({ navigation }) => {
       handleError("Enter last name", "priezvisko");
       valid = false;
     }
+    if (!inputs.mesto) {
+      handleError("Enter town", "mesto");
+      valid = false;
+    }
     if (!inputs.adresa_domu) {
       handleError("Enter address", "adresa_domu");
+      valid = false;
+    }
+    if (!inputs.psc) {
+      handleError("Enter zip code", "psc");
+      valid = false;
+    }
+    if (!inputs.psc.replace(" ", "").length === 5) {
+      handleError("Enter valid zip code", "psc");
       valid = false;
     }
     if (!phoneInput.current?.isValidNumber()) {
@@ -107,7 +119,9 @@ const RegisterScreen = ({ navigation }) => {
   const [inputs, setInputs] = useState({
     meno: "",
     priezvisko: "",
+    mesto: "",
     adresa_domu: "",
+    psc: "",
     telefon: "",
     email: "",
     heslo: "",
@@ -121,8 +135,8 @@ const RegisterScreen = ({ navigation }) => {
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
     { label: "Competitor", value: "Competitor" },
-    { label: "Referee", value: "Referee" },
-    { label: "Organizer", value: "Organizer" },
+    // { label: "Referee", value: "Referee" },
+    // { label: "Organizer", value: "Organizer" },
     { label: "Volunteer", value: "Volunteer" },
     { label: "Mentor", value: "Mentor" },
   ]);
@@ -221,7 +235,7 @@ const RegisterScreen = ({ navigation }) => {
                   setItems={setItems}
                   listMode="SCROLLVIEW"
                   placeholder="Role"
-                  className="bg-slate-100 py-2.5 px-5 rounded-md"
+                  className="bg-inputBackground py-2.5 px-5 rounded-md"
                   containerStyle={{ marginTop: 16 }}
                   placeholderStyle={{ color: "#9ca3af" }}
                   zIndex={150}
@@ -234,17 +248,35 @@ const RegisterScreen = ({ navigation }) => {
                   }}
                 />
                 {errors.rola && (
-                  <Text className="text-red-500 text-[12px] mt-1">
+                  <Text className="text-error text-[12px] mt-1">
                     {errors.rola}
                   </Text>
                 )}
                 <Input
-                  autoComplete="postal-address"
-                  placeholder="Address"
+                  placeholder="Town"
+                  error={errors.mesto}
+                  onChangeText={(text) => {
+                    handleChange(text, "mesto");
+                    handleError(null, "mesto");
+                  }}
+                />
+
+                <Input
+                  placeholder="Street Address"
                   error={errors.adresa_domu}
                   onChangeText={(text) => {
                     handleChange(text, "adresa_domu");
                     handleError(null, "adresa_domu");
+                  }}
+                />
+
+                <Input
+                  placeholder="Zip code"
+                  keyboardType="numeric"
+                  error={errors.psc}
+                  onChangeText={(text) => {
+                    handleChange(text, "psc");
+                    handleError(null, "psc");
                   }}
                 />
 
@@ -271,7 +303,7 @@ const RegisterScreen = ({ navigation }) => {
                   autoFormat={true}
                 />
                 {errors.telefon && (
-                  <Text className="text-red-500 text-[12px] mt-1">
+                  <Text className="text-error text-[12px] mt-1">
                     {errors.telefon}
                   </Text>
                 )}
@@ -299,7 +331,7 @@ const RegisterScreen = ({ navigation }) => {
                       }}
                     />
                     {errors.datum_narodenia && (
-                      <Text className="text-red-500 text-[12px] mt-1">
+                      <Text className="text-error text-[12px] mt-1">
                         {errors.datum_narodenia}
                       </Text>
                     )}
@@ -321,7 +353,7 @@ const RegisterScreen = ({ navigation }) => {
                       setItems={setOrganizaciaItems}
                       listMode="SCROLLVIEW"
                       placeholder="Organization"
-                      className="bg-slate-100 py-2.5 px-5 rounded-md"
+                      className="bg-inputBackground py-2.5 px-5 rounded-md"
                       containerStyle={{ marginTop: 16 }}
                       placeholderStyle={{ color: "#9ca3af" }}
                       zIndex={90}
@@ -334,7 +366,7 @@ const RegisterScreen = ({ navigation }) => {
                       }}
                     />
                     {errors.organizacia && (
-                      <Text className="text-red-500 text-[12px] mt-1">
+                      <Text className="text-error text-[12px] mt-1">
                         {errors.organizacia}
                       </Text>
                     )}
@@ -346,14 +378,16 @@ const RegisterScreen = ({ navigation }) => {
                 <Button text="Register" onPress={validate} type="primary" />
 
                 <View className="flex-row mb-3 items-center">
-                  <Text className="text-gray-500 ">Have an account? </Text>
+                  <Text className="text-gray-500">
+                    Already have an account?{" "}
+                  </Text>
                   <TouchableOpacity
                     onPress={() => {
                       navigation.navigate("Login");
                     }}
                     activeOpacity={0.5}
                   >
-                    <Text className="text-blue-500 font-bold">Sign in</Text>
+                    <Text className="text-primary font-bold">Sign in</Text>
                   </TouchableOpacity>
                 </View>
               </View>

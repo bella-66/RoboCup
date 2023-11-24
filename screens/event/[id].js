@@ -32,20 +32,20 @@ const Event = ({ route, navigation }) => {
 
   return (
     <SafeAreaView className="flex-1">
-      <View className="w-full h-48 absolute top-0 left-0">
+      <View className="w-full h-52 absolute top-0 left-0">
         <LinearGradient
           colors={["#385bff", "#01BFFD"]}
           style={{ width: "100%", height: "100%" }}
           start={{ x: 0.85, y: 0 }}
         />
       </View>
-      <View className="bg-white h-full w-full p-5 rounded-t-3xl z-50 mt-24">
+      <View className="bg-white h-full w-full p-5 rounded-t-3xl z-50 mt-32">
         <Text className="text-[28px] font-semibold mt-4 text-center">
           {nazov}
         </Text>
 
         <View className="flex-row items-center mt-16 mb-14">
-          <View className="bg-blue-100 rounded-xl">
+          <View className="bg-iconBackground rounded-xl">
             <Icon
               name="calendar"
               size={27}
@@ -56,13 +56,13 @@ const Event = ({ route, navigation }) => {
           <View className="flex-row items-center flex-1 justify-evenly">
             <View>
               <Text className="text-lg font-semibold">From</Text>
-              <Text className="text-[16px] text-gray-600">
+              <Text className="text-[16px] text-secondaryText">
                 {moment(datum_od).format("D MMM, yyyy")}
               </Text>
             </View>
             <View>
               <Text className="text-lg font-semibold">To</Text>
-              <Text className="text-[16px] text-gray-600">
+              <Text className="text-[16px] text-secondaryText">
                 {moment(datum_do).format("D MMM, yyyy")}
               </Text>
             </View>
@@ -71,12 +71,14 @@ const Event = ({ route, navigation }) => {
 
         <View className="mb-8">
           <Text className="text-lg font-semibold">About</Text>
-          <Text className="text-[16px] text-gray-600">{charakteristika}</Text>
+          <Text className="text-[16px] text-secondaryText">
+            {charakteristika}
+          </Text>
         </View>
 
         <View className="mt-2">
           <Text className="text-lg font-semibold">Event organizer</Text>
-          <Text className="text-[16px] text-gray-600">
+          <Text className="text-[16px] text-secondaryText">
             {organizaciaNazov} | {stat}
           </Text>
         </View>

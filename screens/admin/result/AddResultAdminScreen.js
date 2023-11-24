@@ -175,7 +175,7 @@ const AddResultAdminScreen = ({ navigation, route }) => {
           }}
           listMode="SCROLLVIEW"
           placeholder="Competition"
-          className="bg-slate-100 py-2.5 px-5 rounded-md"
+          className="bg-inputBackground py-2.5 px-5 rounded-md"
           placeholderStyle={{ color: "#9ca3af" }}
           zIndex={100}
           onOpen={() => {
@@ -186,9 +186,7 @@ const AddResultAdminScreen = ({ navigation, route }) => {
           }}
         />
         {errors.id_sutaz && (
-          <Text className="text-red-500 text-[12px] mt-1">
-            {errors.id_sutaz}
-          </Text>
+          <Text className="text-error text-[12px] mt-1">{errors.id_sutaz}</Text>
         )}
 
         {compValue && (
@@ -208,7 +206,7 @@ const AddResultAdminScreen = ({ navigation, route }) => {
               }}
               listMode="SCROLLVIEW"
               placeholder="Timeline"
-              className="bg-slate-100 py-2.5 px-5 rounded-md"
+              className="bg-inputBackground py-2.5 px-5 rounded-md"
               containerStyle={{ marginTop: 16 }}
               placeholderStyle={{ color: "#9ca3af" }}
               zIndex={90}
@@ -220,7 +218,7 @@ const AddResultAdminScreen = ({ navigation, route }) => {
               }}
             />
             {errors.id_timeline && (
-              <Text className="text-red-500 text-[12px] mt-1">
+              <Text className="text-error text-[12px] mt-1">
                 {errors.id_timeline}
               </Text>
             )}
@@ -265,7 +263,7 @@ const AddResultAdminScreen = ({ navigation, route }) => {
       <View className="w-4/5 mt-8 mb-5">
         <TouchableOpacity
           onPress={validate}
-          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+          className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow"
           activeOpacity={0.5}
         >
           <Text className="text-center text-white font-bold">Submit</Text>

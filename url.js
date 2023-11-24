@@ -1,4 +1,3 @@
-// const BASE_URL = "https://robocupapi.onrender.com";
-const BASE_URL = "http://192.168.1.15:3030";
+const BASE_URL = "https://robocup-api.onrender.com";
 
 export { BASE_URL };

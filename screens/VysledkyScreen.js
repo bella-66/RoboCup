@@ -11,6 +11,7 @@ import axios from "axios";
 import { BASE_URL } from "../url";
 import useAuth from "../context/AuthContext";
 import { FAB } from "@rneui/themed";
+import ResultListItem from "../components/ResultListItem";
 
 const VysledkyScreen = ({ navigation }) => {
   const { userInfo } = useAuth();
@@ -55,7 +56,7 @@ const VysledkyScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <View className="flex-1 bg-[#EFF2F5]">
+    <View className="flex-1 bg-white">
       {sutaze.length === 0 && (
         <Text className="text-center mt-10 font-semibold text-[16px]">
           Nothing to show!
@@ -72,37 +73,29 @@ const VysledkyScreen = ({ navigation }) => {
           />
         </View>
       )}
-      <FlatList
-        className="mt-4"
-        data={sutaze}
-        renderItem={({ item, index, separators }) => {
-          return (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              className="items-center"
-              onPress={() =>
-                navigation.navigate("ListComps", {
-                  id_sutaz: item.id_sutaz,
-                  nazov: item.nazov,
-                })
-              }
-              key={item.id_sutaz}
-            >
-              <View className="bg-blue-400 mb-5 py-5 px-4 w-4/5 items-center rounded-lg">
-                <Text className="text-lg">{item.nazov}</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
-        refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefresh}
-            colors={["blue"]}
-            tintColor={"blue"}
-          />
-        }
-      />
+      {sutaze.length === 0 ? (
+        <Text className="text-center mt-10 text-medium">
+          No results to show!
+        </Text>
+      ) : (
+        <FlatList
+          className="mt-4"
+          data={sutaze}
+          renderItem={({ item, index, separators }) => {
+            return (
+              <ResultListItem id_sutaz={item.id_sutaz} nazov={item.nazov} />
+            );
+          }}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+              colors={["blue"]}
+              tintColor={"blue"}
+            />
+          }
+        />
+      )}
     </View>
   );
 };

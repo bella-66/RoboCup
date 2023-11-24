@@ -6,7 +6,7 @@ const ProfileInfo = ({ title, info, onClick }) => {
     <View className="flex-row items-center justify-between mb-4">
       <View className="">
         <Text className="text-lg font-medium">{title}</Text>
-        <Text className="text-gray-600">{info}</Text>
+        <Text className="text-secondary">{info}</Text>
       </View>
     </View>
   );

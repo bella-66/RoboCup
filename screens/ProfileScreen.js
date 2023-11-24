@@ -68,13 +68,12 @@ const ProfileScreen = ({ navigation }) => {
 
   return (
     <>
-      <StatusBar backgroundColor={"transparent"} translucent style="dark" />
       {userInfo === "without account" ? (
         <View className="flex-1 bg-white items-center justify-center">
           <Text>Sign up!</Text>
           <View className="w-4/5">
             <Pressable
-              className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+              className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow"
               onPress={logout}
             >
               <Text className="text-center text-white font-bold">Login</Text>
@@ -105,7 +104,7 @@ const ProfileScreen = ({ navigation }) => {
                   <Text className="text-[23px] font-semibold">
                     {userInfo.meno} {userInfo.priezvisko}
                   </Text>
-                  <Text className="text-[15px] mt-1 text-gray-600">
+                  <Text className="text-[15px] mt-1 text-secondaryText">
                     {userInfo.email}
                   </Text>
                 </View>
@@ -125,7 +124,16 @@ const ProfileScreen = ({ navigation }) => {
             >
               <View className="w-full">
                 {userInfo.adresa_domu && (
-                  <ProfileInfo title="Address" info={userInfo.adresa_domu} />
+                  <ProfileInfo
+                    title="Address"
+                    info={
+                      userInfo.adresa_domu +
+                      ", " +
+                      userInfo.psc +
+                      " " +
+                      userInfo.mesto
+                    }
+                  />
                 )}
                 <ProfileInfo title={"Phone number"} info={userInfo.telefon} />
                 {userInfo.datum_narodenia && (
@@ -134,7 +142,7 @@ const ProfileScreen = ({ navigation }) => {
                     info={moment(userInfo.datum_narodenia).format("D/M/yyyy")}
                   />
                 )}
-                <ProfileInfo title={"Role"} info={userInfo.rola} />
+                {/* <ProfileInfo title={"Role"} info={userInfo.rola} /> */}
               </View>
 
               {profile.length !== 0 && (
@@ -146,7 +154,7 @@ const ProfileScreen = ({ navigation }) => {
                         return (
                           <TouchableOpacity
                             key={item.id_tim}
-                            className="bg-blue-500 p-3 rounded-xl mr-3 mb-4"
+                            className="rounded-xl mr-3 mb-4"
                             activeOpacity={0.6}
                             onPress={() =>
                               navigation.navigate("UserTeamComps", {
@@ -154,7 +162,9 @@ const ProfileScreen = ({ navigation }) => {
                               })
                             }
                           >
-                            <Text className="text-white">{item.nazov}</Text>
+                            <Text className="text-secondary border-b-[1.5px] border-primary pb-1">
+                              {item.nazov}
+                            </Text>
                           </TouchableOpacity>
                         );
                       })}
@@ -162,15 +172,28 @@ const ProfileScreen = ({ navigation }) => {
                   </View>
                 </>
               )}
+
+              {userInfo.rola === "Mentor" && (
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("RegisterTeam");
+                  }}
+                  activeOpacity={0.5}
+                >
+                  <Text className="text-primary font-bold">
+                    Register your team!
+                  </Text>
+                </TouchableOpacity>
+              )}
             </ScrollView>
 
             <View className="w-4/5 mb-6">
               <TouchableOpacity
-                className="w-full shadow-lg px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+                className="w-full shadow-lg px-2 py-3 bg-primary rounded-md shadow-shadow"
                 onPress={showDialog}
                 activeOpacity={0.5}
               >
-                <Text className="text-center text-orange-50 font-bold">
+                <Text className="text-center text-white font-bold">
                   Log out
                 </Text>
               </TouchableOpacity>

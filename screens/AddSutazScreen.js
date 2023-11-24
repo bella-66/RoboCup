@@ -142,7 +142,7 @@ const AddSutazScreen = () => {
                 setItems={setItems}
                 listMode="SCROLLVIEW"
                 placeholder="Main referee"
-                className="bg-slate-100 py-2.5 px-5 rounded-md"
+                className="bg-inputBackground py-2.5 px-5 rounded-md"
                 containerStyle={{ marginTop: 16 }}
                 placeholderStyle={{ color: "#9ca3af" }}
                 zIndex={100}
@@ -155,7 +155,7 @@ const AddSutazScreen = () => {
                 }}
               />
               {errors.id_hlavny_rozhodca && (
-                <Text className="text-red-500 text-[12px] mt-1">
+                <Text className="text-error text-[12px] mt-1">
                   {errors.id_hlavny_rozhodca}
                 </Text>
               )}
@@ -174,7 +174,7 @@ const AddSutazScreen = () => {
               <TouchableOpacity
                 activeOpacity={0.5}
                 onPress={validate}
-                className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+                className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow"
               >
                 <Text className="text-center text-white font-bold">Submit</Text>
               </TouchableOpacity>

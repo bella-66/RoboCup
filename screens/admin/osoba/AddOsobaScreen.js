@@ -46,8 +46,20 @@ const AddOsobaScreen = ({ navigation, route }) => {
       handleError("Enter last name", "priezvisko");
       valid = false;
     }
+    if (!inputs.mesto) {
+      handleError("Enter town", "mesto");
+      valid = false;
+    }
     if (!inputs.adresa_domu) {
       handleError("Enter address", "adresa_domu");
+      valid = false;
+    }
+    if (!inputs.psc) {
+      handleError("Enter zip code", "psc");
+      valid = false;
+    }
+    if (!inputs.psc.replace(" ", "").length === 5) {
+      handleError("Enter valid zip code", "psc");
       valid = false;
     }
     if (!phoneInput.current?.isValidNumber()) {
@@ -136,6 +148,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                 setInputs({
                   meno: "",
                   priezvisko: "",
+                  mesto: "",
                   adresa_domu: "",
                   telefon: "",
                   email: "",
@@ -164,7 +177,9 @@ const AddOsobaScreen = ({ navigation, route }) => {
   const [inputs, setInputs] = useState({
     meno: route.params?.meno || "",
     priezvisko: route.params?.priezvisko || "",
+    mesto: route.params?.mesto || "",
     adresa_domu: route.params?.adresa_domu || "",
+    psc: route.params?.psc || "",
     telefon: route.params?.telefon || "",
     email: route.params?.email || "",
     heslo: route.params?.heslo || "",
@@ -328,7 +343,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                   setItems={setItems}
                   listMode="SCROLLVIEW"
                   placeholder="Role"
-                  className="bg-slate-100 py-2.5 px-5 rounded-md"
+                  className="bg-inputBackground py-2.5 px-5 rounded-md"
                   containerStyle={{ marginTop: 16 }}
                   placeholderStyle={{ color: "#9ca3af" }}
                   zIndex={150}
@@ -341,18 +356,36 @@ const AddOsobaScreen = ({ navigation, route }) => {
                   }}
                 />
                 {errors.rola && (
-                  <Text className="text-red-500 text-[12px] mt-1">
+                  <Text className="text-error text-[12px] mt-1">
                     {errors.rola}
                   </Text>
                 )}
                 <Input
+                  value={inputs.mesto}
+                  placeholder="Town"
+                  error={errors.mesto}
+                  onChangeText={(text) => {
+                    handleChange(text, "mesto");
+                    handleError(null, "mesto");
+                  }}
+                />
+                <Input
                   value={inputs.adresa_domu}
-                  autoComplete="postal-address"
-                  placeholder="Address"
+                  placeholder="Street address"
                   error={errors.adresa_domu}
                   onChangeText={(text) => {
                     handleChange(text, "adresa_domu");
                     handleError(null, "adresa_domu");
+                  }}
+                />
+                <Input
+                  value={inputs.psc}
+                  placeholder="Zip code"
+                  keyboardType="numeric"
+                  error={errors.psc}
+                  onChangeText={(text) => {
+                    handleChange(text, "psc");
+                    handleError(null, "psc");
                   }}
                 />
                 <PhoneInput
@@ -378,7 +411,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                   autoFormat={true}
                 />
                 {errors.telefon && (
-                  <Text className="text-red-500 text-[12px] mt-1">
+                  <Text className="text-error text-[12px] mt-1">
                     {errors.telefon}
                   </Text>
                 )}
@@ -410,7 +443,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       }}
                     />
                     {errors.datum_narodenia && (
-                      <Text className="text-red-500 text-[12px] mt-1">
+                      <Text className="text-error text-[12px] mt-1">
                         {errors.datum_narodenia}
                       </Text>
                     )}
@@ -435,7 +468,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       setItems={setTimItems}
                       listMode="SCROLLVIEW"
                       placeholder="Teams"
-                      className="bg-slate-100 py-2.5 px-5 rounded-md"
+                      className="bg-inputBackground py-2.5 px-5 rounded-md"
                       containerStyle={{ marginTop: 16 }}
                       placeholderStyle={{ color: "#9ca3af" }}
                       zIndex={100}
@@ -448,7 +481,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       }}
                     />
                     {errors.tim && (
-                      <Text className="text-red-500 text-[12px] mt-1">
+                      <Text className="text-error text-[12px] mt-1">
                         {errors.tim}
                       </Text>
                     )}
@@ -465,7 +498,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       setItems={setOrganizaciaItems}
                       listMode="SCROLLVIEW"
                       placeholder="Organization"
-                      className="bg-slate-100 py-2.5 px-5 rounded-md"
+                      className="bg-inputBackground py-2.5 px-5 rounded-md"
                       containerStyle={{ marginTop: 16 }}
                       placeholderStyle={{ color: "#9ca3af" }}
                       zIndex={90}
@@ -478,7 +511,7 @@ const AddOsobaScreen = ({ navigation, route }) => {
                       }}
                     />
                     {errors.organizacia && (
-                      <Text className="text-red-500 text-[12px] mt-1">
+                      <Text className="text-error text-[12px] mt-1">
                         {errors.organizacia}
                       </Text>
                     )}

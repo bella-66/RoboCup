@@ -84,7 +84,7 @@ const AddCompToTeam = ({ route }) => {
           setItems={setTeamItems}
           listMode="SCROLLVIEW"
           placeholder="Team"
-          className="bg-slate-100 py-2.5 px-5 rounded-md"
+          className="bg-inputBackground py-2.5 px-5 rounded-md"
           containerStyle={{ marginTop: 16 }}
           placeholderStyle={{ color: "#9ca3af" }}
           zIndex={90}
@@ -97,13 +97,13 @@ const AddCompToTeam = ({ route }) => {
           }}
         />
         {errors.team && (
-          <Text className="text-red-500 text-[12px] mt-1">{errors.team}</Text>
+          <Text className="text-error text-[12px] mt-1">{errors.team}</Text>
         )}
       </View>
       <View className="w-4/5 mt-8 mb-5">
         <TouchableOpacity
           onPress={validate}
-          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+          className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow"
           activeOpacity={0.5}
         >
           <Text className="text-center text-white font-bold">Submit</Text>

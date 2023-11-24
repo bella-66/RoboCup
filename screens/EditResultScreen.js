@@ -95,7 +95,7 @@ const EditResultScreen = ({ route, navigation }) => {
           />
           {tim2 && (
             <View className="mt-5">
-              <Text className="font-semibold text-[15px]">{tim2}</Text>
+              <Text className="font-semibold text-[15px] ">{tim2}</Text>
               <Input
                 keyboardType="numeric"
                 value={inputs.vysledok_2 && inputs.vysledok_2.toString()}
@@ -114,7 +114,7 @@ const EditResultScreen = ({ route, navigation }) => {
       <View className="w-4/5 mt-12 mb-5">
         <Pressable
           onPress={validate}
-          className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+          className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow"
         >
           <Text className="text-center text-white font-bold">Submit</Text>
         </Pressable>

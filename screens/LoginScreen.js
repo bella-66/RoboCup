@@ -113,7 +113,7 @@ const Login = ({ navigation }) => {
         <View className="w-4/5 items-center justify-center gap-5 mt-6">
           <TouchableOpacity
             activeOpacity={0.6}
-            className="w-full shadow-xl px-2 py-3 bg-blue-500 rounded-md shadow-blue-700"
+            className="w-full shadow-xl px-2 py-3 bg-primary rounded-md shadow-shadow"
             onPress={validate}
           >
             <Text className="text-center text-white font-bold">Login</Text>
@@ -127,7 +127,7 @@ const Login = ({ navigation }) => {
                 navigation.navigate("Register");
               }}
             >
-              <Text className="text-blue-500 font-bold">Register</Text>
+              <Text className="text-primary font-bold">Register</Text>
             </TouchableOpacity>
           </View>
         </View>

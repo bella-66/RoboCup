@@ -123,7 +123,7 @@ const HomeScreen = ({ navigation }) => {
                   ),
                   name: "bt_competition",
                   position: 2,
-                  color: "#60a5fa",
+                  color: "#388ef9",
                   buttonSize: 45,
                 },
                 {
@@ -139,7 +139,7 @@ const HomeScreen = ({ navigation }) => {
                   ),
                   name: "bt_timeline",
                   position: 1,
-                  color: "#60a5fa",
+                  color: "#388ef9",
                 },
               ]}
             />
@@ -155,7 +155,7 @@ const HomeScreen = ({ navigation }) => {
         futureScrollRange={4}
         showClosingKnob={true}
         // enableSwipeMonths={true}
-        showOnlySelectedDayItems={true}
+        showOnlySelectedDayItems={false}
         refreshControl={
           <RefreshControl
             refreshing={refreshing}
