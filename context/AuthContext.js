@@ -128,7 +128,7 @@ export const AuthProvider = ({ children }) => {
         userInfo,
         register,
         login,
-        continueWithoutAccount,
+        // continueWithoutAccount,
         logout,
         updateUserInfo,
       }}

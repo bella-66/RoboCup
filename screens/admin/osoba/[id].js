@@ -64,6 +64,7 @@ const OsobaOne = ({ route }) => {
       email: info.email,
       mesto: info.mesto,
       adresa_domu: info.adresa_domu,
+      psc: info.psc,
       datum_narodenia: info.datum_narodenia,
       telefon: info.telefon,
       rola: info.rola,

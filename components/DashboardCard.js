@@ -31,7 +31,7 @@ const DashboardCard = ({ date, druh, sutaz, tim1, tim2, id_timeline }) => {
             )}
           </View>
           <View>
-            <Text className="text-gray-600 font-medium">
+            <Text className="text-gray-700 font-medium">
               {moment(date).format("H:mm")}
             </Text>
           </View>
